@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Buku</title>
+    <title>Document</title>
 </head>
 <body>
-<div>
+
     <div>
         <header>
-            @include('components.header')
+            @include ('components.header')
         </header>
-    </div>
-    
-    <div>
-        @include('components.detail')
     </div>
 
     <div>
-        @include('components.recommended23')
+        
     </div>
-    
-    <div class="py-20 px-5">
+
+    <div>
         <footer>
             @include('components.footer')
         </footer>
     </div>
-</div>
 </body>
 </html>

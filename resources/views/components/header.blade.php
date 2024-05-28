@@ -17,7 +17,7 @@
 
             <!-- Logo -->
             <div>
-                <a href="#" class="text-white text-2xl font-bold">Landing Library</a>
+                <a href= "dashboard" class="text-white text-2xl font-bold">Landing Library</a>
             </div>
 
             <!-- Categories -->

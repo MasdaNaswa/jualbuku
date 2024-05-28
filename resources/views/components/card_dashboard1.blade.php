@@ -171,7 +171,7 @@ $(document).ready(function(){
 								</div>
 								<div class="thumb-content text-left">
                                     <div class="text-gray text-xs font-semibold py-2">Leila Chudori</div>		
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Laut Bercerita</a>	
+                                    <a href="detail-produk" class="text-blue-900 text-m font-bold py-2">Laut Bercerita</a>	
                                     <div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>

@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+class AkunController extends Controller
 {
     public function tampilkan()
     {
-        return view('buku'); // Remove the .php extension
+        return view('akun'); // Remove the .php extension
     }
 }

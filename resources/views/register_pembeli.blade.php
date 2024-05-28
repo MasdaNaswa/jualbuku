@@ -1,3 +1,10 @@
+@if(session('success'))
+    <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center">
+        <div class="bg-green-500 text-white px-4 py-2 rounded-md">
+            {{ session('success') }}
+        </div>
+    </div>
+@endif
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <div class="absolute top-0 left-0 h-full w-full overflow-hidden">
     <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://img.freepik.com/free-photo/high-angle-view-laptop-stationeries-blue-background_23-2147880456.jpg?w=900&t=st=1711075084~exp=1711075684~hmac=d5ddc912ce6e4efb0c6259226d6b4037dbffc5e32d2d31b1ffc7b7a6cea3b014');">

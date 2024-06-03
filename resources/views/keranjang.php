@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>Keranjang</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
 
             <!-- Logo -->
             <div>
-                <a href="#" class="text-white text-2xl font-bold">Landing Library</a>
+                <a href="dashboard" class="text-white text-2xl font-bold">Landing Library</a>
             </div>
 
             <!-- Categories -->
@@ -38,25 +38,14 @@
                     </button>
                     <div
                         class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
-                        <!-- Adjusted width to w-full and added flex-col class -->
                         <div
-                            class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-full">
-                            <div class="grid grid-cols-4 gap-2">
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Novel</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Komik</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Sains</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Islam</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Pelajaran</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Anak</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Cerpen</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Majalah</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Psikologi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Fantasi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Non Fiksi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Dogeng</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Biografi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Manga</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Kamus</a>
+                            class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
+                            <div class="flex flex-col">
+                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Cerpen</a>
+                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
+                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
+                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
+                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
                             </div>
                         </div>
                     </div>
@@ -82,7 +71,7 @@
 
             <!-- Login Icon -->
             <div class="ml-4 flex items-center">
-                <a href="#" class="text-white hover:text-white">
+                <a href="keranjang" class="text-white hover:text-white">
                     <i class='bx bxs-cart text-3xl'></i>
                 </a>
             </div>
@@ -95,155 +84,159 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h2 class="mt-6 ml-20 text-2xl font-bold">Keranjang saya</h2>
-
-        <!-- Tabel -->
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg ml-10 mt-5">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-blue-300 dark:text-gray-400">
+    <main class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4 text-blue-900">Keranjang Saya</h2>
+        <div class="bg-white shadow rounded-lg p-4">
+            <table class="w-full text-left">
+                <thead class="bg-blue-900 text-white rounded-lg">
                     <tr>
-                        <th scope="col" class="p-4">
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Product name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Harga
-                        </th>
-                        <th scope="col" class="px-6 py-3 flex justify-center items-center">
-                            Jumlah
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Total
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                        </th>
+                        <th class="p-2">Produk</th>
+                        <th class="p-2">Harga</th>
+                        <th class="p-2">Jumlah</th>
+                        <th class="p-2">Total</th>
+                        <th class="p-2"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50
-                            dark:hover:bg-gray-600">
-                            <td class="w-4 p-4">
-                                <div class="flex items-center">
-                                    <input id="checkbox-table-search-1" type="checkbox"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                                </div>
-                            </td>
-                            <td scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <div class="flex items-center">
-                                    <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/2/14/iddphd9rbufdfjabf4owuf.jpg"
-                                        alt="Gambar Produk" class="w-12 h-18 mr-2">
-                                    <span class="ml-2">The Girl Who Fell Beneath the Sea</span>
-                                </div>
-                            </td>
-                            <td class="px-30 py-10">
-                                Rp.60.000
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center space-x-4 flex justify-center items-center">
-                                    <button id="decrement"
-                                        class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">-</button>
-                                    <span id="count" class="px-4 py-2 bg-gray-200 rounded">0</span>
-                                    <button id="increment"
-                                        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">+</button>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                Rp60.000
-                            </td>
-                            <td class="flex items-center px-6 py-4 ">
-                                <div class="mt-5">
-                                    <box-icon type='solid' name='trash-alt' color='red'></box-icon>
-                                </div>
-                            </td>
+                    <tr class="border-b">
+                        <td class="p-2 flex items-center text-black text-semibold">
+                            <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/2/14/iddphd9rbufdfjabf4owuf.jpg"
+                                alt="The Girl who Fell Beneath the Sea" class="h-16 w-16 object-cover mr-2 text-black">
+                            The Girl who Fell Beneath the Sea
+                        </td>
+                        <td class="p-2 text-black text-semibold">Rp 60.000</td>
+                        <td class="p-2 flex items-center">
+                            <button class="px-2 py-1 border" onclick="updateQuantity(this, 'decrease')">-</button>
+                            <input type="text" value="1" class="w-12 text-center mx-2 border">
+                            <button class="px-2 py-1 border" onclick="updateQuantity(this, 'increase')">+</button>
+                        </td>
+                        <td class="p-2 text-black text-semibold">Rp 60.000</td>
+                        <td class="p-2">
+                            <button class="text-red-600" onclick="showDeleteModal(this)">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </td>
                     </tr>
-                    <tr>
-                        <class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50
-                            dark:hover:bg-gray-600">
-                            <td class="w-4 p-4">
-                                <div class="flex items-center">
-                                    <input id="checkbox-table-search-1" type="checkbox"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                    <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                                </div>
-                            </td>
-                            <td scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <div class="flex items-center">
-                                    <img src="https://s3-ap-southeast-1.amazonaws.com/ebook-previews/40678/143505/1.jpg"
-                                        alt="Gambar Produk" class="w-12 h-18 mr-2">
-                                    <span class="ml-2">Lautan Bercinta</span>
-                                </div>
-                            </td>
-                            <td class="px-30 py-10">
-                                Rp.60.000
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex items-center space-x-4 flex justify-center items-center">
-                                    <button id="decrement"
-                                        class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">-</button>
-                                    <span id="count" class="px-4 py-2 bg-gray-200 rounded">0</span>
-                                    <button id="increment"
-                                        class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">+</button>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                Rp60.000
-                            </td>
-                            <td class="flex items-center px-6 py-4 ">
-                                <div class="mt-5">
-                                    <box-icon type='solid' name='trash-alt' color='red'></box-icon>
-                                </div>
-                            </td>
+                    <tr class="border-b">
+                        <td class="p-2 flex items-center text-black text-semibold">
+                            <img src="https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png"
+                                alt="Novel Laut Bercerita" class="h-16 w-16 object-cover mr-2 text-black">
+                            Laut Bercerita
+                        </td>
+                        <td class="p-2 text-black text-semibold">Rp 90.000</td>
+                        <td class="p-2 flex items-center">
+                            <button class="px-2 py-1 border" onclick="updateQuantity(this, 'decrease')">-</button>
+                            <input type="text" value="1" class="w-12 text-center mx-2 border">
+                            <button class="px-2 py-1 border" onclick="updateQuantity(this, 'increase')">+</button>
+                        </td>
+                        <td class="p-2 text-black text-semibold">Rp 90.000</td>
+                        <td class="p-2">
+                            <button class="text-red-600" onclick="showDeleteModal(this)">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-2 flex items-center text-black text-semibold">
+                            <img src="https://cdn.gramedia.com/uploads/items/img20220205_15340302.jpg"
+                                alt="Novel Mariposa" class="h-16 w-16 object-cover mr-2">
+                            Mariposa
+                        </td>
+                        <td class="p-2 text-black text-semibold">Rp 70.000</td>
+                        <td class="p-2 flex items-center">
+                            <button class="px-2 py-1 border" onclick="updateQuantity(this, 'decrease')">-</button>
+                            <input type="text" value="1" class="w-12 text-center mx-2 border">
+                            <button class="px-2 py-1 border" onclick="updateQuantity(this, 'increase')">+</button>
+                        </td>
+                        <td class="p-2 text-black text-semibold">Rp 70.000</td>
+                        <td class="p-2">
+                            <button class="text-red-600" onclick="showDeleteModal(this)">
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
 
-
-        <!-- Total -->
-        <div class="flex flex-col items-end mt-5 mx-auto pl-20">
-            <!-- Menggunakan flexbox untuk mengatur tata letak -->
-            <div class="text-right">
-                <!-- Menggunakan text-right untuk mengatur teks ke kanan -->
-                <span class="font-bold text-left">Subtotal Produk :</span>
-                <span class="mr-3">Rp.100.000</span><br>
-                <span class="font-bold text-left">Subtotal Pengiriman :</span>
-                <span class="mr-3">Rp.100.000</span><br>
-                <span class="font-bold text-left">Biaya Layanan :</span>
-                <span class="mr-3">Rp.100.000</span><br>
-                <span class="font-bold text-left">Total Pembayaran :</span>
-                <span class="mr-3">Rp.100.000</span><br>
-            </div>
-            <a href="pesanan" style="width: 150px"
-                class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">
-                <div class="flex items-center justify-center w-full">
-                    <!-- Menggunakan div untuk menempatkan ikon dan teks secara bersamaan -->
-                    <svg class="w-9.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 18 21">
-                        <path
-                            d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z" />
-                    </svg>
-                    <p class="text-m font-bold text-white dark:text-white align-text-center">Beli</p>
+            <div class="mt-4 flex justify-end">
+                <div>
+                    <p class="text-xl font-semibold text-black">Total: <span id="totalPrice">Rp 220.000</span></p>
+                    <a href="form-pembayaran"
+                        class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 inline-block">Lanjutkan
+                        Pembayaran</a>
                 </div>
-            </a>
+            </div>
 
         </div>
+    </main>
+
+    <!-- Delete Modal -->
+    <div id="deleteModal" class="fixed z-10 inset-0 overflow-y-auto hidden">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">​</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <svg class="h-6 w-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Hapus Produk</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">Apakah Anda yakin ingin menghapus produk ini dari
+                                    keranjang Anda?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                        onclick="deleteProduct()">
+                        Hapus
+                    </button>
+                    <button type="button"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
+                        onclick="closeDeleteModal()">
+                        Batal
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    <footer class="relative bg-white pt-8 pb-6 py-20 mt-20">
+
+    <footer class="relative bg-[#] pt-8 pb-6 py-20">
         <div class="container mx-auto px-4">
             <div class="flex flex-wrap text-left lg:text-left">
                 <div class="w-full lg:w-6/12 px-4">
                     <h3 class="font-bold text-2xl text-blueGray-500">Landing Library </h3>
                     <h5 class="text-xs mt-0 mb-2 text-[#374c71]" style="text-align: justify;">
                         Landing library toko buku online menyediakan beragam koleksi yang luas dari segala jenis buku,
-                        mulai dari fiksi hingga non-fiksi, termasuk novel, ensiklopedia, buku pelajaran, dan banyak
-                        lagi, memenuhi kebutuhan pembaca dengan berbagai minat dan preferensi.
+                        mulai
+                        dari fiksi hingga non-fiksi, termasuk novel, ensiklopedia, buku pelajaran, dan banyak lagi,
+                        memenuhi
+                        kebutuhan pembaca dengan berbagai minat dan preferensi.
                     </h5>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -309,36 +302,65 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
     <script>
-        const countDisplay = document.getElementById('count');
-        const incrementButton = document.getElementById('increment');
-        const decrementButton = document.getElementById('decrement');
+        function updateQuantity(button, action) {
+            var quantityInput = button.parentNode.querySelector('input');
+            var quantity = parseInt(quantityInput.value);
 
-        let count = 0;
+            if (action === 'increase') {
+                quantity++;
+            } else if (action === 'decrease' && quantity > 1) {
+                quantity--;
+            }
 
-        // Fungsi untuk menambahkan nilai
-        function incrementCount() {
-            count++;
-            countDisplay.textContent = count;
+            quantityInput.value = quantity;
+            updateTotal(button);
         }
 
-        // Fungsi untuk mengurangi nilai, hanya jika nilainya lebih besar dari 1
-        function decrementCount() {
-            if (count > 0) {
-                count--;
-                countDisplay.textContent = count;
+        function updateTotal(button) {
+            var row = button.parentNode.parentNode;
+            var priceCell = row.querySelectorAll('td')[1];
+            var totalCell = row.querySelectorAll('td')[3];
+            var price = parseInt(priceCell.innerText.replace('Rp ', '').replace('.', ''));
+            var quantity = parseInt(row.querySelector('input').value);
+            var total = price * quantity;
+            totalCell.innerText = 'Rp ' + total.toLocaleString('id-ID');
+
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            var rows = document.querySelectorAll('tbody tr');
+            var total = 0;
+            rows.forEach(function (row) {
+                var totalCell = row.querySelectorAll('td')[3];
+                var rowTotal = parseInt(totalCell.innerText.replace('Rp ', '').replace('.', ''));
+                total += rowTotal;
+            });
+            document.getElementById('totalPrice').innerText = 'Rp ' + total.toLocaleString('id-ID');
+        }
+
+        var productToDelete = null;
+
+        function showDeleteModal(button) {
+            productToDelete = button.closest('tr');
+            document.getElementById('deleteModal').classList.remove('hidden');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.add('hidden');
+        }
+
+        function deleteProduct() {
+            if (productToDelete) {
+                productToDelete.remove();
+                updateTotalPrice();
+                closeDeleteModal();
             }
         }
 
-        // Event listener untuk tombol tambah
-        incrementButton.addEventListener('click', incrementCount);
-
-        // Event listener untuk tombol kurang
-        decrementButton.addEventListener('click', decrementCount);
-
     </script>
-
 </body>
 
 </html>

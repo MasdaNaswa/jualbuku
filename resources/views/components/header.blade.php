@@ -17,7 +17,7 @@
 
             <!-- Logo -->
             <div>
-                <a href= "dashboard" class="text-white text-2xl font-bold">Landing Library</a>
+                <a href="dashboard" class="text-white text-2xl font-bold">Landing Library</a>
             </div>
 
             <!-- Categories -->
@@ -34,10 +34,12 @@
                     </button>
                     <div
                         class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
-                        <!-- Adjusted width to w-full and added flex-col class -->
                         <div class="flex flex-col">
-                            <a href="#" class="block px-3 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
-                            <a href="#" class="block px-3 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Cerpen</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
                         </div>
                     </div>
                 </div>
@@ -66,13 +68,13 @@
 
             <!-- Login Icon -->
             <div class="ml-4 flex items-center">
-                <a href="Bukunovel" class="text-white hover:text-white">
+                <a href="keranjang" class="text-white hover:text-white">
                     <i class='bx bxs-cart text-3xl'></i>
                 </a>
             </div>
 
             <div class="ml-4 flex items-center">
-                <a href="#" class="text-white hover:white">
+                <a href="" class="text-white hover:white">
                     <i class='bx bxs-user-circle text-3xl'></i>
                 </a>
             </div>

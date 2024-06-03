@@ -7,7 +7,6 @@ use App\Http\Controllers\LoginPembeliController;
 use App\Http\Controllers\RegisterPembeliController;
 use App\Http\Controllers\LupaKataSandiPembeliController;
 use App\Http\Controllers\DashboardPembeliController;
-use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\ListProdukController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -19,6 +18,13 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardAdminProdukController;
 use App\Http\Controllers\DashboardAdminPesananController;
 use App\Http\Controllers\DashboardAdminRekapanController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\DetailProdukController;
+use App\Http\Controllers\FormPembayaranController;
+use App\Http\Controllers\RingkasanController;
+use App\Http\Controllers\ResiController;
+use App\Http\Controllers\KeranjangController;
+
 
 
  Route::get('/', function () {
@@ -55,8 +61,9 @@ Route::get('/register-pembeli', [RegisterPembeliController::class, 'showForm']);
 Route::get('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'showLupaKataSandiForm']);
 
 
-
 Route::get('/dashboard', [DashboardPembeliController::class, 'index']);
+
+
 
 Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 
@@ -88,3 +95,13 @@ Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'i
 Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
 
 Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
+Route::get('/detail-produk', [DetailProdukController::class, 'index']);
+Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
+Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
+Route::get('/cetak-resi', [ResiController::class, 'showForm']);
+Route::get('/generate-pdf', [ResiController::class, 'generatePDF']);
+Route::get('/kategori/{kategori}', [KategoriController::class, 'index'])->name('kategori.index');
+
+Route::get('/ringkasan', [RingkasanController::class, 'index'])->name('ringkasan');
+Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
+

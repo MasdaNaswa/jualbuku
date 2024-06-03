@@ -27,19 +27,19 @@
                     <!-- Slide-start -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="https://media.discordapp.net/attachments/1230479316521975842/1230485973108916324/SELAMAT_DATANG.png?ex=66337e5d&is=6621095d&hm=56eeac5807effa9ea0a9ca9c2061a3dff882d8f9e46cceac64c71033a56b7075&=&format=webp&quality=lossless&width=895&height=503" alt="Tranding" class="w-full h-full rounded-lg object-cover">
+                            <img src="/images/1.png">
                         </div>
                     </div>
                     <!-- Slide-end -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="https://media.discordapp.net/attachments/1230479316521975842/1230483730301190204/The_Creative_Startup_Roadmap.png?ex=66337c46&is=66210746&hm=10817c727d263b4075c1cd46ce61ffc47260624568b42b354d3d929f70c0beb1&=&format=webp&quality=lossless&width=895&height=503" alt="Tranding" class="w-full h-full rounded-lg object-cover">
+                            <img src="/images/2.png">
                         </div>
                     </div>
                     <!-- More slides... -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="https://media.discordapp.net/attachments/1230479316521975842/1230479367109611610/LANDING_LIBRARY.png?ex=66337836&is=66210336&hm=dd59a8069b052f1f48804c73e0034c5b19ca7210dbb2b105d7534e6d000ff306&=&format=webp&quality=lossless&width=895&height=503" alt="Tranding" class="w-full h-full rounded-lg object-cover">
+                            <img src="/images/3.png">
                         </div>
                     </div>
                 </div>

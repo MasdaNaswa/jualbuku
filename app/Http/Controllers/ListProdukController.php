@@ -3,37 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produk;
+use App\Models\Tblproduk;
 
 class ListProdukController extends Controller
 {
-    // Method untuk menampilkan daftar produk
     public function show()
     {
-        // Ambil semua data produk dari database
-        $produks = Produk::all();
-        
-        // Kembalikan view dengan data produk
-        return view('list_produk', ['produks' => $produks]);
+        $tblproduk = Tblproduk::all();
+        return view('list_produk', ['tblproduk' => $tblproduk]);
     }
 
-    // Method untuk menyimpan data produk baru
     public function simpan(Request $request)
     {
-        $request->validate([
+        // Validasi input
+        $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'deskripsi' => 'nullable|string',
-            'harga' => 'required|numeric|min:0',
+            'deskripsi' => 'required|string|max:255',
+            'harga' => 'required|numeric', // Validasi harga
         ]);
 
-        $produk = new Produk;
+        // Membuat instance baru dari model Tblproduk
+        $produk = new Tblproduk();
         $produk->nama = $request->input('nama');
         $produk->deskripsi = $request->input('deskripsi');
-        $produk->harga = $request->input('harga');
+        $produk->harga = $request->input('harga'); // Tambahkan harga
+
+        // Menyimpan data ke database
         $produk->save();
 
-        return redirect()->back()->with('success', 'Data Berhasil Disimpan!');
+        return redirect()->back()->with('success', 'Produk berhasil disimpan!');
+    }
+
+    public function delete($id) {
+        $produk = tblproduk::where('id', $id)->first();
+        if ($produk) {
+            $produk->delete();
+            return redirect()->back()->with('success', 'Produk berhasil dihapus.');
+        
+        }else{
+            return redirect()->back()->with('error', 'Produk tidak ditemukan.');
+        }
     }
 }
-
- 

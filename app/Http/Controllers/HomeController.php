@@ -10,5 +10,8 @@ class HomeController extends Controller
     {
         return view('login_pembeli');
     }
+    public function login() {
+        
+    }
 }
 ?>

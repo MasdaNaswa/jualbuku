@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --font-league-spartan: "League Spartan";
+  
+    /* font sizes */
+    --font-size-xl: 20px;
+    --font-size-base: 16px;
+    --font-size-2xs: 11px;
+    --font-size-smi: 13px;
+    --font-size-3xs: 10px;
+    --font-size-xs: 12px;
+    --font-size-6xl: 25px;
+  
+    /* Colors */
+    --color-gainsboro: #e0e0e0;
+    --color-lavender: #ccdfef;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-darkslateblue: #1e3a8a;
+  
+    /* Gaps */
+    --gap-xl: 20px;
+    --gap-7xl: 26px;
+    --gap-2xl: 21px;
+    --gap-6xs: 7px;
+    --gap-5xs: 8px;
+    --gap-4xs: 9px;
+    --gap-3xl: 22px;
+  
+    /* Paddings */
+    --padding-xl: 20px;
+    --padding-5xs: 8px;
+    --padding-11xs: 2px;
+    --padding-base: 16px;
+    --padding-14xl: 33px;
+    --padding-7xs: 6px;
+    --padding-smi: 13px;
+    --padding-8xs: 5px;
+    --padding-3xs: 10px;
+    --padding-4xs: 9px;
+    --padding-9xs: 4px;
+    --padding-10xs: 3px;
+    --padding-2xs: 11px;
+    --padding-37xl: 56px;
+    --padding-17xl: 36px;
+    --padding-12xs: 1px;
+    --padding-6xs: 7px;
+  
+    /* Border radiuses */
+    --br-21xl: 40px;
+    --br-31xl: 50px;
+    --br-3xs: 10px;
+    --br-11xl: 30px;
+    --br-5xs: 8px;
+  }
+  

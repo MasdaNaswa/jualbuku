@@ -1,0 +1,917 @@
+.menu-akun-pembeli-child {
+    align-self: stretch;
+    height: 1024px;
+    position: relative;
+    background-color: #fff;
+    display: none;
+    z-index: 0;
+  }
+  .landing1 {
+    margin: 0;
+  }
+  .landing,
+  .library {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    z-index: 1;
+  }
+  .library {
+    align-self: stretch;
+  }
+  .landing-parent,
+  .library-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .library-wrapper {
+    flex: 1;
+    flex-direction: column;
+    padding: 8px 0 0;
+    font-size: 30px;
+  }
+  .landing-parent {
+    width: 256px;
+    flex-direction: row;
+  }
+  .kategori {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    display: inline-block;
+    min-width: 86px;
+    z-index: 1;
+  }
+  .kategori-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 11px 16px 0 0;
+    font-size: 25px;
+    color: #003d7e;
+  }
+  .frame-child {
+    height: 40px;
+    width: 606px;
+    position: relative;
+    border-radius: 50px;
+    background-color: #fff;
+    display: none;
+    max-width: 100%;
+  }
+  .cari-produk-buku {
+    width: 176px;
+    border: 0;
+    outline: 0;
+    font-family: "League Spartan";
+    font-size: 25px;
+    background-color: transparent;
+    height: 23px;
+    position: relative;
+    color: #adadad;
+    text-align: left;
+    display: inline-block;
+    padding: 0;
+    z-index: 2;
+  }
+  .claritysearch-line-icon {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+  .rectangle-parent {
+    align-self: stretch;
+    border-radius: 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 9px 20px 8px 38px;
+    box-sizing: border-box;
+    max-width: 100%;
+    gap: 20px;
+    z-index: 1;
+  }
+  .frame-container,
+  .frame-div,
+  .frame-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .frame-div {
+    width: 606px;
+    flex-direction: column;
+    padding: 2px 0 0;
+    box-sizing: border-box;
+  }
+  .frame-container,
+  .frame-wrapper {
+    flex-direction: row;
+  }
+  .frame-container {
+    gap: 41px;
+  }
+  .frame-wrapper {
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+  .frame-item {
+    width: 352px;
+    height: 821px;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    display: none;
+    max-width: 100%;
+  }
+  .mingcuteuser-4-fill-icon {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+  .mingcuteuser-4-fill-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 15px;
+  }
+  .dina-ramadani {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    z-index: 2;
+  }
+  .frame-parent3,
+  .frame-wrapper2 {
+    display: flex;
+    align-items: flex-start;
+  }
+  .frame-parent3 {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  .frame-wrapper2 {
+    width: 266px;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+  .frame-inner {
+    align-self: stretch;
+    height: 2px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: contain;
+    z-index: 2;
+  }
+  .frame-parent2 {
+    width: 294px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 26px;
+  }
+  .mdiaccount-icon {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+  .akun-saya {
+    margin: 0;
+    flex: 1;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    z-index: 2;
+  }
+  .mdiaccount-parent {
+    width: 192px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 7px;
+  }
+  .icon-park-solidtransaction-or {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: contain;
+    z-index: 2;
+  }
+  .ringkasan-pesanan {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .frame-parent5,
+  .icon-park-solidtransaction-or-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 7px;
+  }
+  .frame-parent5 {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .rilogout-box-r-fill-icon {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+  .keluar,
+  .keluar1 {
+    margin: 0;
+  }
+  .keluar {
+    flex: 1;
+    position: relative;
+    font-size: inherit;
+    font-weight: 700;
+    font-family: inherit;
+    z-index: 2;
+  }
+  .rilogout-box-r-fill-parent {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 7px;
+  }
+  .frame-parent4,
+  .frame-wrapper3,
+  .rilogout-box-r-fill-parent {
+    display: flex;
+    align-items: flex-start;
+  }
+  .frame-parent4 {
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 19px;
+  }
+  .frame-wrapper3 {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 5px 0 0;
+    font-size: 30px;
+  }
+  .frame-wrapper1,
+  .rectangle-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .rectangle-group {
+    align-self: stretch;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    align-items: flex-end;
+    padding: 67px 30px 299px 22px;
+    gap: 53px;
+    z-index: 1;
+  }
+  .frame-wrapper1 {
+    width: 352px;
+    align-items: flex-start;
+    padding: 10px 0 0;
+    min-width: 352px;
+  }
+  .rectangle-div {
+    width: 1008px;
+    height: 831px;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    display: none;
+    max-width: 100%;
+  }
+  .nama-lengkap {
+    width: 120px;
+    position: absolute;
+    margin: 0 !important;
+    top: 77px;
+    left: 17px;
+    display: inline-block;
+    z-index: 2;
+  }
+  .mdiaccount-icon1 {
+    height: 45px;
+    width: 43px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    min-height: 45px;
+    z-index: 3;
+  }
+  .data-diri {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+    z-index: 2;
+  }
+  .data-diri-wrapper,
+  .mdiaccount-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .data-diri-wrapper {
+    flex-direction: column;
+    padding: 4px 0 0;
+  }
+  .mdiaccount-group {
+    flex-direction: row;
+  }
+  .frame-child1 {
+    height: 57px;
+    width: 944px;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    display: none;
+    max-width: 100%;
+  }
+  .dina-ramadani1 {
+    align-self: stretch;
+    position: relative;
+    z-index: 4;
+  }
+  .dina-ramadani-wrapper {
+    width: 121px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 9px 0 0;
+    box-sizing: border-box;
+  }
+  .ubah {
+    width: 51px;
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+    z-index: 4;
+  }
+  .rectangle-parent1 {
+    align-self: stretch;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 14px 25px 13px 15px;
+    box-sizing: border-box;
+    max-width: 100%;
+    gap: 20px;
+    z-index: 3;
+  }
+  .email {
+    position: relative;
+    display: inline-block;
+    min-width: 44px;
+    z-index: 2;
+  }
+  .email-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 11px;
+  }
+  .frame-child2 {
+    height: 57px;
+    width: 944px;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    display: none;
+    max-width: 100%;
+  }
+  .dinaramadanigmailcom {
+    align-self: stretch;
+    position: relative;
+    text-decoration: underline;
+    color: inherit;
+    white-space: nowrap;
+    z-index: 4;
+  }
+  .dinaramadanigmailcom-wrapper {
+    width: 211px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6px 0 0;
+    box-sizing: border-box;
+  }
+  .ubah1 {
+    width: 51px;
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+    z-index: 4;
+  }
+  .frame-parent8,
+  .rectangle-parent2 {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .rectangle-parent2 {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 25px 16px 11px;
+    box-sizing: border-box;
+    gap: 20px;
+    z-index: 3;
+  }
+  .frame-parent8 {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .no-telpon,
+  .no-telpon1 {
+    position: relative;
+    display: inline-block;
+    min-width: 81px;
+    z-index: 2;
+  }
+  .no-telpon1 {
+    z-index: 3;
+    margin-left: -81px;
+  }
+  .no-telpon-parent,
+  .phone-input {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .phone-input {
+    padding: 0 15px;
+  }
+  .save-data-box-child {
+    height: 57px;
+    width: 944px;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    display: none;
+    max-width: 100%;
+  }
+  .div {
+    width: 185px;
+    position: relative;
+    display: inline-block;
+    z-index: 3;
+  }
+  .save-data-box-item {
+    width: 51px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    height: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2px 0 0;
+    box-sizing: border-box;
+    font-family: "Lao Muang Don";
+    font-size: 20px;
+    color: #000;
+  }
+  .edit-phone,
+  .frame-parent7,
+  .save-data-box {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .save-data-box {
+    align-self: stretch;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 25px 14px 11px;
+    box-sizing: border-box;
+    gap: 20px;
+    z-index: 2;
+    font-size: 20px;
+  }
+  .edit-phone,
+  .frame-parent7 {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .edit-phone {
+    align-self: stretch;
+    gap: 4px;
+  }
+  .frame-parent7 {
+    flex: 1;
+    gap: 21.5px;
+  }
+  .frame-wrapper4 {
+    align-self: stretch;
+    flex-direction: row;
+    padding: 0 0 0 6px;
+    box-sizing: border-box;
+    font-size: 17px;
+    color: #000;
+  }
+  .frame-parent6,
+  .frame-wrapper4,
+  .nama-lengkap-parent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .frame-parent6 {
+    flex: 1;
+    flex-direction: column;
+    gap: 53px;
+    font-size: 32px;
+    color: #265c93;
+  }
+  .nama-lengkap-parent {
+    align-self: stretch;
+    flex-direction: row;
+    position: relative;
+  }
+  .settings-menu-child {
+    height: 65px;
+    width: 944px;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #5f93cb;
+    border: 1px solid #535353;
+    box-sizing: border-box;
+    display: none;
+    max-width: 100%;
+  }
+  .simpan-data {
+    width: 271px;
+    position: relative;
+    font-size: 30px;
+    display: inline-block;
+    font-family: "League Spartan";
+    color: #fff;
+    text-align: left;
+    flex-shrink: 0;
+    z-index: 3;
+  }
+  .settings-menu {
+    cursor: pointer;
+    border: 1px solid #535353;
+    padding: 13px 289px 20px;
+    background-color: #5f93cb;
+    align-self: stretch;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+    z-index: 2;
+  }
+  .settings-menu:hover {
+    background-color: #457ab3;
+    border: 1px solid #7a7a7a;
+    box-sizing: border-box;
+  }
+  .frame-parent1,
+  .rectangle-container {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .rectangle-container {
+    flex: 1;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 32px 32px 235px 26px;
+    box-sizing: border-box;
+    gap: 141px;
+    min-width: 655px;
+    z-index: 1;
+    font-size: 17px;
+    color: #000;
+    font-family: "Lao Muang Don";
+  }
+  .frame-parent1 {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .frame-group,
+  .typcnplus-icon {
+    flex-shrink: 0;
+    debug_commit: 1de1738;
+  }
+  .frame-group {
+    width: 1384px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 81px;
+    max-width: calc(100% - 1526px);
+  }
+  .typcnplus-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .frame-parent,
+  .typcnplus-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 154px 0 0;
+  }
+  .frame-parent {
+    width: 1426px;
+    flex-direction: row;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+    gap: 1502px;
+    max-width: 100%;
+    text-align: left;
+    font-size: 36px;
+    color: #265c93;
+    font-family: "League Spartan";
+  }
+  .icbaseline-account-circle-icon,
+  .mdicart-icon {
+    position: absolute;
+    top: 33px;
+    left: 1266px;
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .mdicart-icon {
+    left: 1330px;
+  }
+  .image-35-icon {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: -89px;
+    max-height: 100%;
+    width: 1529px;
+    object-fit: cover;
+    z-index: 3;
+  }
+  .account-icon {
+    width: 100%;
+    height: 88px;
+    position: absolute;
+    margin: 0 !important;
+    top: 1px;
+    right: 0;
+    left: 0;
+  }
+  .image-47-icon {
+    margin-right: -62px;
+    width: 1565px;
+    position: relative;
+    max-height: 100%;
+    object-fit: cover;
+    max-width: 109%;
+    flex-shrink: 0;
+  }
+  .menu-akun-pembeli {
+    width: 100%;
+    height: 1529px;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 28px 0 547px;
+    box-sizing: border-box;
+    gap: 103px;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 1200px) {
+    .frame-parent6,
+    .frame-wrapper1 {
+      flex: 1;
+    }
+    .frame-parent1 {
+      flex-wrap: wrap;
+    }
+    .frame-parent {
+      gap: 751px;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .landing {
+      font-size: 29px;
+    }
+    .library {
+      font-size: 24px;
+    }
+    .frame-container {
+      flex-wrap: wrap;
+    }
+    .dina-ramadani {
+      font-size: 29px;
+    }
+    .akun-saya,
+    .keluar,
+    .ringkasan-pesanan {
+      font-size: 24px;
+    }
+    .rectangle-group {
+      padding-top: 44px;
+      padding-bottom: 194px;
+      box-sizing: border-box;
+    }
+    .data-diri {
+      font-size: 26px;
+    }
+    .simpan-data {
+      font-size: 24px;
+    }
+    .rectangle-container {
+      gap: 70px;
+      padding-top: 21px;
+      padding-bottom: 153px;
+      box-sizing: border-box;
+    }
+    .menu-akun-pembeli {
+      height: auto;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .frame-container {
+      gap: 20px;
+    }
+    .frame-parent6 {
+      gap: 26px;
+    }
+    .rectangle-container {
+      gap: 35px;
+      min-width: 100%;
+    }
+    .frame-group {
+      gap: 40px;
+    }
+    .frame-parent {
+      gap: 375px;
+    }
+    .menu-akun-pembeli {
+      gap: 51px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .landing {
+      font-size: 22px;
+    }
+    .library {
+      font-size: 18px;
+    }
+    .cari-produk-buku,
+    .kategori {
+      font-size: 20px;
+    }
+    .dina-ramadani {
+      font-size: 22px;
+    }
+    .akun-saya,
+    .keluar,
+    .ringkasan-pesanan {
+      font-size: 18px;
+    }
+    .rectangle-group {
+      gap: 26px;
+      padding-top: 29px;
+      padding-bottom: 126px;
+      box-sizing: border-box;
+    }
+    .frame-wrapper1 {
+      min-width: 100%;
+    }
+    .data-diri {
+      font-size: 19px;
+    }
+    .ubah {
+      font-size: 16px;
+    }
+    .rectangle-parent1 {
+      flex-wrap: wrap;
+    }
+    .ubah1 {
+      font-size: 16px;
+    }
+    .rectangle-parent2 {
+      flex-wrap: wrap;
+    }
+    .div {
+      font-size: 16px;
+    }
+    .save-data-box {
+      flex-wrap: wrap;
+    }
+    .simpan-data {
+      font-size: 18px;
+    }
+    .settings-menu {
+      padding-left: 20px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+    .rectangle-container {
+      gap: 18px;
+      padding-top: 20px;
+      padding-bottom: 99px;
+      box-sizing: border-box;
+    }
+    .frame-group {
+      gap: 20px;
+    }
+    .frame-parent {
+      gap: 188px;
+    }
+    .menu-akun-pembeli {
+      gap: 26px;
+    }
+  }

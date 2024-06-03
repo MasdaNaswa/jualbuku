@@ -6,14 +6,20 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginPembeliController;
 use App\Http\Controllers\RegisterPembeliController;
 use App\Http\Controllers\LupaKataSandiPembeliController;
-use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DashboardPembeliController;
-use App\Http\Controllers\DetailProdukController;
-use App\Http\Controllers\PesananController;
 use App\Http\Controllers\KeranjangController;
-use App\Http\Controllers\DetailController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\ListProdukController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\RegisterAdminController;
+use App\Http\Controllers\LupaKataSandiAdminController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardAdminProdukController;
+use App\Http\Controllers\DashboardAdminPesananController;
+use App\Http\Controllers\DashboardAdminRekapanController;
+
 
  Route::get('/', function () {
     return view('welcome');
@@ -33,32 +39,52 @@ use App\Http\Controllers\ListProdukController;
    });
  });
 
- //Route::get('/listbarang/{id}/{nama}', function($id, $nama){
- //  return view('list_barang', compact('id', 'nama'));
- // });
+
 
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
    
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/contact', [HomeController::class, 'contact']);
+
 
 Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm']);
-Route::post('/login-pembeli', [LoginPembeliController::class, 'processLogin']);
 
-Route::get('/register-pembeli', [RegisterPembeliController::class, 'showRegisterForm']);
-Route::post('/register-pembeli', [RegisterPembeliController::class, 'processRegister']);
+
+Route::get('/register-pembeli', [RegisterPembeliController::class, 'showForm']);
+
 
 Route::get('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'showLupaKataSandiForm']);
-Route::post('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'processLupaKataSandi']);
+
 
 
 Route::get('/dashboard', [DashboardPembeliController::class, 'index']);
 
-Route::get('/detail-produk', [DetailProdukController::class, 'index']);
-
 Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 
-Route::get('/detail', [DetailController::class, 'tampilkan']);
-Route::get('/Akun', [akunController::class, 'tampilkan']);
-Route::get('/listproduk', [ListProdukController::class, 'show']);
-Route::post('/listproduk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
+Route::get('/akun', [akunController::class, 'tampilkan']);
+
+Route::get('/list_produk', [ListProdukController::class, 'show'])->name('produk.list');
+Route::post('/list_produk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
+Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
+Route::get('api/produk', [ApiController::class, 'index']);
+Route::get('api/produk', [ApiController::class, 'index']);
+Route::get('api/list', [ApiController::class, 'getProduct']);
+
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm']);
+Route::post('/login-admin', [LoginAdminController::class, 'processLogin']);
+
+Route::get('/register-admin', [RegisterAdminController::class, 'showRegisterForm']);
+Route::post('/register-admin', [RegisterAdminController::class, 'processRegister']);
+
+Route::get('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'showLupaKataSandiForm']);
+Route::post('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'processLupaKataSandi']);
+
+Route::get('/dashboard-admin', [DashboardAdminController::class, 'index']);
+
+Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index']);
+
+Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
+
+Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);

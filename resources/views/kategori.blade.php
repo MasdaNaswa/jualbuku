@@ -14,7 +14,6 @@
 
     </style>
 </head>
-
 <body class="bg-gray">
     <navbar>
         <div>
@@ -43,7 +42,6 @@
                     </li>
                 </ul>
             </div>
-
             <!-- Daftar Produk -->
             <div class="w-4/5 p-5">
                 <div class="flex flex-col items-center">
@@ -144,17 +142,10 @@
         </div>
     </div>
     </div>
-
-
-
-
-
     <div class="py-20 px-5">
         <footer>
             @include('components.footer')
         </footer>
     </div>
-
 </body>
-
 </html>

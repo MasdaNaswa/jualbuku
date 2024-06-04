@@ -160,11 +160,11 @@
                                                     class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                                     <option value="" disabled selected style="color: black;">Pilih
                                                         Kategori</option>
-                                                    <option value="kategori1" style="color: black;">Fiksi</option>
-                                                    <option value="kategori2" style="color: black;">Non-Fiksi</option>
-                                                    <option value="kategori3" style="color: black;">Sains</option>
-                                                    <option value="kategori4" style="color: black;">Komik</option>
-                                                    <option value="kategori5" style="color: black;">Novel</option>
+                                                    <option value="kategori1" style="color: black;">Sains</option>
+                                                    <option value="kategori2" style="color: black;">Bisnis</option>
+                                                    <option value="kategori3" style="color: black;">Komik</option>
+                                                    <option value="kategori4" style="color: black;">Fiksi</option>
+                                                    <option value="kategori5" style="color: black;">Nonfiksi</option>
                                                 </select>
                                             </div>
                                             <div class="w-1/2">

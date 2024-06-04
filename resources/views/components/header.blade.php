@@ -35,8 +35,8 @@
                     <div
                         class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
                         <div class="flex flex-col">
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Cerpen</a>
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Sains</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Bisnis</a>
                             <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
                             <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
                             <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
@@ -44,10 +44,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <!-- Search Bar -->
             <div class="flex-grow mx-4">
                 <!-- Adjusted margin -->
@@ -65,25 +61,19 @@
                     </button>
                 </form>
             </div>
-
             <!-- Login Icon -->
             <div class="ml-4 flex items-center">
                 <a href="keranjang" class="text-white hover:text-white">
                     <i class='bx bxs-cart text-3xl'></i>
                 </a>
             </div>
-
             <div class="ml-4 flex items-center">
-                <a href="" class="text-white hover:white">
+                <a href="akun" class="text-white hover:white">
                     <i class='bx bxs-user-circle text-3xl'></i>
                 </a>
             </div>
-
-
-
         </div>
     </nav>
-
     <!-- Include the Alpine.js library -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
 
@@ -101,5 +91,4 @@
     </script>
 
 </body>
-
 </html>

@@ -72,6 +72,7 @@ Route::get('/akun', [akunController::class, 'tampilkan']);
 Route::get('/list_produk', [ListProdukController::class, 'show'])->name('produk.list');
 Route::post('/list_produk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
 Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
+
 Route::get('api/produk', [ApiController::class, 'index']);
 Route::get('api/produk', [ApiController::class, 'index']);
 Route::get('api/list', [ApiController::class, 'getProduct']);
@@ -79,6 +80,7 @@ Route::get('api/list', [ApiController::class, 'getProduct']);
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+
 Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm']);
 Route::post('/login-admin', [LoginAdminController::class, 'processLogin']);
 
@@ -95,13 +97,19 @@ Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'i
 Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
 
 Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
+
 Route::get('/detail-produk', [DetailProdukController::class, 'index']);
+
 Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
 Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
+
+
 Route::get('/cetak-resi', [ResiController::class, 'showForm']);
 Route::get('/generate-pdf', [ResiController::class, 'generatePDF']);
+
 Route::get('/kategori/{kategori}', [KategoriController::class, 'index'])->name('kategori.index');
 
 Route::get('/ringkasan', [RingkasanController::class, 'index'])->name('ringkasan');
+
 Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 

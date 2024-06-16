@@ -22,8 +22,9 @@
 
             <!-- Categories -->
             <div class="hidden md:flex space-x-4">
-                <div class="relative group ml-6">
+                <div class="relative ml-6" x-data="{ open: false }">
                     <button
+                        @click="open = !open"
                         class="text-white text-xm font-bold hover:bg-blue-900 px-3 py-2 rounded-md inline-flex items-center">
                         <span>Kategori Buku</span>
                         <svg class="h-3 w-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -33,7 +34,9 @@
                         </svg>
                     </button>
                     <div
-                        class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute z-10 mt-2 bg-white rounded-md shadow-lg py-1 px-6 w-96">
                         <div class="flex flex-col">
                             <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Sains</a>
                             <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Bisnis</a>
@@ -61,34 +64,27 @@
                     </button>
                 </form>
             </div>
-            <!-- Login Icon -->
+            <!-- Cart Icon -->
             <div class="ml-4 flex items-center">
                 <a href="keranjang" class="text-white hover:text-white">
                     <i class='bx bxs-cart text-3xl'></i>
                 </a>
             </div>
-            <div class="ml-4 flex items-center">
-                <a href="akun" class="text-white hover:white">
+            <!-- User Icon with Dropdown -->
+            <div class="ml-4 flex items-center relative" x-data="{ open: false }">
+                <button @click="open = !open" class="text-white hover:text-white focus:outline-none">
                     <i class='bx bxs-user-circle text-3xl'></i>
-                </a>
+                </button>
+                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
+                    <a href="akun" class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100">Akun</a>
+                    <a href="login-pembeli" class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100">Masuk</a>
+                    <a href="register-pembeli" class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100">Daftar</a>
+                </div>
             </div>
         </div>
     </nav>
     <!-- Include the Alpine.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
-
-    <!-- JavaScript to toggle dropdown -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownButtons = document.querySelectorAll('.relative');
-            dropdownButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    button.querySelector('.absolute').classList.toggle('hidden');
-                });
-            });
-        });
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
 
 </body>
 </html>

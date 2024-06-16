@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardAdminProdukController;
 use App\Http\Controllers\DashboardAdminPesananController;
 use App\Http\Controllers\DashboardAdminRekapanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DetailProdukController;
 use App\Http\Controllers\FormPembayaranController;
 use App\Http\Controllers\RingkasanController;
@@ -48,14 +49,19 @@ use App\Http\Controllers\KeranjangController;
 
 
 Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
+
+Route::get('produk', [ProdukController::class, 'index']);
+Route::get('produk/Edit/{id}/', [ProdukController::class, 'edit']);
+Route::get('produk/create/{id}/', [ProdukController::class, 'create'])->name('produk.create');
+Route::post('produk/Store', [ProdukController::class, 'store']);
+Route::get('produk/Delete/{id}', [ProdukController::class, 'destroy']);
    
 Route::get('/', [HomeController::class, 'index']);
 
-
 Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm']);
 
-
 Route::get('/register-pembeli', [RegisterPembeliController::class, 'showForm']);
+Route::post('/register-pembeli', [RegisterPembeliController::class, 'register']);
 
 
 Route::get('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'showLupaKataSandiForm']);

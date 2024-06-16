@@ -12,8 +12,9 @@
     <script src="https://unpkg.com/boxicons"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
+
 <body class="bg-white">
-    
+
     <!-- Navbar -->
     <nav class="bg-blue-900 py-4">
         <div class="container mx-auto flex justify-between items-center px-20">
@@ -86,20 +87,41 @@
                     <hr class="my-4 w-full border-t-2 border-solid border-gray-300">
                 </div>
                 <a href="akun">
-                <div class="mt-5 ml-5 flex items-center">
-                    <box-icon type='solid' name='user' color='#5F93CB'></box-icon>
-                    <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Akun Saya</p>
-                </div>
+                    <div class="mt-5 ml-5 flex items-center">
+                        <box-icon type='solid' name='user' color='#5F93CB'></box-icon>
+                        <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Akun Saya</p>
+                    </div>
                 </a>
                 <a href="ringkasan">
-                <div class="mt-5 ml-5 mt-2 flex items-center">
-                    <box-icon name='clipboard' color='#5F93CB'></box-icon>
-                    <p class="ml-2 text-l font-bold text-blue-900 dark:text-white" >Ringkasan Pesanan</p>
-                </div>
+                    <div class="mt-5 ml-5 mt-2 flex items-center">
+                        <box-icon name='clipboard' color='#5F93CB'></box-icon>
+                        <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Ringkasan Pesanan</p>
+                    </div>
                 </a>
-                <div class="mt-5 ml-5 mt-2 flex items-center">
-                <box-icon name='log-out-circle' color='#5F93CB'></box-icon>
-                    <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Keluar</p>
+                <a href="dashboard" id="logout-link">
+                    <div class="mt-5 ml-5 mt-2 flex items-center">
+                        <box-icon name='log-out-circle' color='#5F93CB' id="logout-icon"></box-icon>
+                        <p class="ml-2 text-l font-bold text-blue-900 dark:text-white" id="logout-text">Keluar</p>
+                    </div>
+                </a>
+
+                <!-- The Modal -->
+                <div id="logoutModal"
+                    style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+                    <!-- Removed padding-top:60px; -->
+                    <div id="modalContent"
+                        style="background-color:#fefefe; margin:0 auto; padding:20px; border:1px solid #888; width:80%; max-width:500px; text-align:center; border-radius:10px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+                        <!-- Added position:absolute; left:50%; top:50%; transform: translate(-50%, -50%); -->
+                        <span id="closeModal"
+                            style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+                        <box-icon name='error-circle' color='#f44336' size='lg' style="display:block; margin:0 auto;">
+                        </box-icon>
+                        <p>Anda yakin ingin keluar?</p>
+                        <button id="confirm-logout"
+                            style="background-color: #4CAF50; color: white; padding: 10px 20px; margin: 5px; border: none; cursor: pointer; border-radius:5px;">Ya</button>
+                        <button id="cancel-logout"
+                            style="background-color: #f44336; color: white; padding: 10px 20px; margin: 5px; border: none; cursor: pointer; border-radius:5px;">Tidak</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,7 +138,8 @@
                     style="height: 40px; width: 800px; overflow: hidden;">
                     <div class="ml-2 mt-2 flex justify-between">
                         <p class="text-l text-gray-900 dark:text-white">Dina</p>
-                        <a href="#" class="text-l text-gray-900 dark:text-white mr-5" onclick="openModal('Nama Lengkap', 'Dina')">Ubah</a>
+                        <a href="#" class="text-l text-gray-900 dark:text-white mr-5"
+                            onclick="openModal('Nama Lengkap', 'Dina')">Ubah</a>
                     </div>
                 </div>
             </div>
@@ -126,7 +149,8 @@
                     style="height: 40px; width: 800px; overflow: hidden;">
                     <div class="ml-2 mt-2 flex justify-between">
                         <p class="text-l text-gray-900 dark:text-white">dinaramadani@gmail.com</p>
-                        <a href="#" class="text-l text-gray-900 dark:text-white mr-5" onclick="openModal('Email', 'dinaramadani@gmail.com')">Ubah</a>
+                        <a href="#" class="text-l text-gray-900 dark:text-white mr-5"
+                            onclick="openModal('Email', 'dinaramadani@gmail.com')">Ubah</a>
                     </div>
                 </div>
             </div>
@@ -136,7 +160,8 @@
                     style="height: 40px; width: 800px; overflow: hidden;">
                     <div class="ml-2 mt-2 flex justify-between">
                         <p class="text-l text-gray-900 dark:text-white">(+62) 224 6686 4321</p>
-                        <a href="#" class="text-l text-gray-900 dark:text-white mr-5" onclick="openModal('No Telp', '(+62) 224 6686 4321')">Ubah</a>
+                        <a href="#" class="text-l text-gray-900 dark:text-white mr-5"
+                            onclick="openModal('No Telp', '(+62) 224 6686 4321')">Ubah</a>
                     </div>
                 </div>
             </div>
@@ -160,7 +185,50 @@
             </div>
         </div>
     </div>
-    
+
+    <script>
+        var modal = document.getElementById("logoutModal");
+
+        // Get the link that opens the modal
+        var link = document.getElementById("logout-link");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementById("closeModal");
+
+        // Get the confirm and cancel buttons
+        var confirmButton = document.getElementById("confirm-logout");
+        var cancelButton = document.getElementById("cancel-logout");
+
+        // When the user clicks on the link, open the modal
+        link.onclick = function (event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks on "No", close the modal
+        cancelButton.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks on "Yes", redirect to the dashboard
+        confirmButton.onclick = function () {
+            window.location.href = "dashboard";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+
     <script>
         function openModal(title, value) {
             document.getElementById('modal-title').innerText = 'Ubah ' + title;
@@ -176,6 +244,8 @@
             // Implement your save logic here
             closeModal();
         }
+
     </script>
 </body>
+
 </html>

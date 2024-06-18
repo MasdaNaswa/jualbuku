@@ -55,7 +55,7 @@ Route::get('produk/Edit/{id}/', [ProdukController::class, 'edit']);
 Route::get('produk/create/{id}/', [ProdukController::class, 'create'])->name('produk.create');
 Route::post('produk/Store', [ProdukController::class, 'store']);
 Route::get('produk/Delete/{id}', [ProdukController::class, 'destroy']);
-   
+
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm']);
@@ -99,6 +99,9 @@ Route::post('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'processLu
 Route::get('/dashboard-admin', [DashboardAdminController::class, 'index']);
 
 Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index']);
+Route::post('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'store']);
+Route::post('/dashboard-admin-produk/update/{id}', [DashboardAdminProdukController::class, 'update']);
+Route::post('/dashboard-admin-produk/hapus/{id}', [DashboardAdminProdukController::class, 'destroy']);
 
 Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
 

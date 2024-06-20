@@ -140,7 +140,7 @@
                                 <tr>
                                     <td class="py-2 px-4 border-b">
                                         <img src="{{asset('images/produk/' . $row->gambar_buku)}}" alt="Gambar Buku"
-                                            class="w-16 h-50 object-cover">
+                                            class="w-16 h-16 object-cover">
                                     </td>
                                     <td class="py-2 px-4 border-b text-black text-sm">{{ $row->nama_kategori }}</td>
                                     <td class="py-2 px-4 border-b text-black text-sm">{{ $row->stok }}</td>
@@ -182,231 +182,184 @@
                                         </div>
 
                                         <!-- Modal Konfirmasi Hapus -->
-                                        @foreach($data as $row)
-                                <tr>
-                                    <td class="py-2 px-4 border-b">
-                                        <img src="{{ asset('images/produk/' . $row->gambar_buku) }}" alt="Gambar Buku"
-                                            class="w-16 h-50 object-cover">
-                                    </td>
-                                    <!-- Modal Konfirmasi Hapus -->
-                                    <div id="delete-modal{{$row->id}}" tabindex="-1" aria-hidden="true"
-                                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
-                                        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                                <div class="flex justify-end p-2">
-                                                    <button type="button"
-                                                        class="text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                                                        data-modal-hide="delete-modal{{$row->id}}">
-                                                        <svg aria-hidden="true" class="w-5 h-5" fill="black"
-                                                            stroke="CurrentColor" viewBox="0 0 20 20"
-                                                            xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z">
-                                                            </path>
-                                                        </svg>
-                                                        <span class="sr-only">Close modal</span>
-                                                    </button>
-                                                </div>
-                                                <div class="p-6 text-center">
-                                                    <div class="flex justify-center mb-4">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                                            width="60" height="60" fill="gray" stroke="CurrentColor">
-                                                            <path
-                                                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
-                                                        </svg>
-                                                    </div>
-                                                    <h3 class="mb-5 text-lg font-bold text-black dark:text-gray-400">
-                                                        Lanjutkan Hapus?
-                                                    </h3>
-                                                    <form
-                                                        action="{{ route('dashboard-admin-produk.destroy', $row->id)}}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button data-modal-hide="delete-modal{{$row->id}}" type="submit"
-                                                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                                            Ya
+                                        <div id="delete-modal{{$row->Id}}" tabindex="-1" aria-hidden="true"
+                                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
+                                            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                                    <div class="flex justify-end p-2">
+                                                        <button type="button"
+                                                            class="text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                                            data-modal-hide="delete-modal{{$row->Id}}">
+                                                            <svg aria-hidden="true" class="w-5 h-5" fill="black"
+                                                                stroke="CurrentColor" viewBox="0 0 20 20"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z">
+                                                                </path>
+                                                            </svg>
+                                                            <span class="sr-only">Close modal</span>
                                                         </button>
-                                                        <button data-modal-hide="delete-modal{{$row->id}}" type="button"
-                                                            class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                                            Tidak
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </tr>
-                                @endforeach
 
-                                <!-- Modal Edit -->
-                                <div id="edit-modal{{$row->Id}}"
-                                    class="fixed inset-0 overflow-hidden z-50 flex justify-center items-center hidden">
-                                    <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
-                                    <div
-                                        class="bg-white rounded-lg shadow-xl p-8 w-1/2 relative z-10 max-h-screen overflow-y-auto">
-                                        <div class="flex justify-between items-center mb-4">
-                                            <h2 class="text-2xl font-bold text-gray-700">Ubah Data Produk</h2>
-                                            <button data-modal-hide="edit-modal{{$row->Id}}"
-                                                class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+                                                    </div>
+                                                    <div class="p-6 text-center">
+                                                        <div class="flex justify-center mb-4">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 512 512" width="60" height="60" fill="gray"
+                                                                stroke="CurrentColor">
+                                                                <path
+                                                                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                                                            </svg>
+                                                        </div>
+                                                        <h3
+                                                            class="mb-5 text-lg font-bold text-black dark:text-gray-400">
+                                                            Lanjutkan Hapus?
+                                                        </h3>
+                                                        <form action="{{url('dashboard-admin-produk/hapus', $row->Id)}}"
+                                                            method="post">
+                                                            @csrf
+                                                            <button data-modal-hide="delete-modal" type="submit"
+                                                                class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                                                Ya
+                                                            </button>
+                                                            <button data-modal-hide="delete-modal" type="button"
+                                                                class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                                                Tidak
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <form action="{{route ('dashboard-admin-produk.update', $row->id)}}"
-                                            method="POST" class="space-y-4" enctype="multipart/form-data">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="kategori"
-                                                        class="block text-sm font-medium text-gray-700">Kategori</label>
-                                                    <select id="kategori" name="nama_kategori" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                        <option value="Sains" style="color: black;"
-                                                            {{$row->nama_kategori == 'Sains' ? 'selected':''}}>
-                                                            Sains</option>
-                                                        <option value="Bisnis" style="color: black;"
-                                                            {{$row->nama_kategori == 'Bisnis' ? 'selected':''}}>
-                                                            Bisnis</option>
-                                                        <option value="Komik" style="color: black;"
-                                                            {{$row->nama_kategori == 'Komik' ? 'selected':''}}>
-                                                            Komik</option>
-                                                        <option value="Fiksi" style="color: black;"
-                                                            {{$row->nama_kategori == 'Fiksi' ? 'selected':''}}>
-                                                            Fiksi</option>
-                                                        <option value="Nonfiksi" style="color: black;"
-                                                            {{$row->nama_kategori == 'Nonfiksi' ? 'selected':''}}>
-                                                            Nonfiksi</option>
-                                                    </select>
+
+                                        <!-- Modal Edit -->
+                                        <div id="edit-modal{{$row->Id}}"
+                                            class="fixed inset-0 overflow-hidden z-50 flex justify-center items-center hidden">
+                                            <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
+                                            <div
+                                                class="bg-white rounded-lg shadow-xl p-8 w-1/2 relative z-10 max-h-screen overflow-y-auto">
+                                                <div class="flex justify-between items-center mb-4">
+                                                    <h2 class="text-2xl font-bold text-gray-700">Ubah Data Produk</h2>
+                                                    <button data-modal-hide="edit-modal{{$row->Id}}"
+                                                        class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
                                                 </div>
-                                                <div class="w-1/2">
-                                                    <label for="stok"
-                                                        class="block text-sm font-medium text-gray-700">Stok</label>
-                                                    <input type="number" id="stok" name="stok" value="{{$row->stok}}"
-                                                        required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
+                                                <form action="{{url('dashboard-admin-produk/update', $row->Id)}}" method="POST" class="space-y-4" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="kategori"
+                                                                class="block text-sm font-medium text-gray-700">Kategori</label>
+                                                            <select id="kategori" name="nama_kategori" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                                <option value="Sains" style="color: black;" {{$row->nama_kategori == 'Sains' ? 'selected':''}}>Sains</option>
+                                                                <option value="Bisnis" style="color: black;" {{$row->nama_kategori == 'Bisnis' ? 'selected':''}}>Bisnis</option>
+                                                                <option value="Komik" style="color: black;" {{$row->nama_kategori == 'Komik' ? 'selected':''}}>Komik</option>
+                                                                <option value="Fiksi" style="color: black;" {{$row->nama_kategori == 'Fiksi' ? 'selected':''}}>Fiksi</option>
+                                                                <option value="Nonfiksi" style="color: black;" {{$row->nama_kategori == 'Nonfiksi' ? 'selected':''}}>Nonfiksi</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="stok" class="block text-sm font-medium text-gray-700">Stok</label>
+                                                            <input type="number" id="stok" name="stok" value="{{$row->stok}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="penulis" class="block text-sm font-medium text-gray-700">Penulis</label>
+                                                            <input type="text" id="penulis" name="penulis" value="{{$row->penulis}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="judul_buku" class="block text-sm font-medium text-gray-700">Judul
+                                                                Buku</label>
+                                                            <input type="text" id="judul_buku" name="judul_buku" value="{{$row->judul_buku}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                                                        <textarea id="deskripsi" name="deskripsi" required
+                                                            class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">{{$row->deskripsi}}</textarea>
+                                                    </div>
+                                                    <div>
+                                                        <p class="block text-sm font-medium text-gray-700 font-bold">Detail Buku</p>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="harga" class="block text-sm font-medium text-gray-700">Harga</label>
+                                                            <input type="number" id="harga" name="harga" value="{{$row->harga}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="gambar" class="block text-sm font-medium text-gray-700">Gambar</label>
+                                                            <input type="file" id="gambar" name="gambar_buku" value="{{$row->gambar_buku}}"
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-medium file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="jumlah_halaman" class="block text-sm font-medium text-gray-700">Jumlah
+                                                                Halaman</label>
+                                                            <input type="number" id="jumlah_halaman" name="jumlah_halaman" value="{{$row->jumlah_halaman}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="tgl_terbit" class="block text-sm font-medium text-gray-700">Tanggal
+                                                                Terbit</label>
+                                                            <input type="date" id="tgl_terbit" name="tgl_terbit" value="{{$row->tgl_terbit}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="isbn" class="block text-sm font-medium text-gray-700">ISBN</label>
+                                                            <input type="text" id="isbn" name="isbn" value="{{$row->isbn}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="bahasa" class="block text-sm font-medium text-gray-700">Bahasa</label>
+                                                            <input type="text" id="bahasa" name="bahasa" value="{{$row->bahasa}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="penerbit"
+                                                                class="block text-sm font-medium text-gray-700">Penerbit</label>
+                                                            <input type="text" id="penerbit" name="penerbit" value="{{$row->penerbit}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="berat" class="block text-sm font-medium text-gray-700">Berat
+                                                                (gram)</label>
+                                                            <input type="number" id="berat" name="berat" value="{{$row->berat}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex space-x-4">
+                                                        <div class="w-1/2">
+                                                            <label for="lebar" class="block text-sm font-medium text-gray-700">Lebar
+                                                                (cm)</label>
+                                                            <input type="number" id="lebar" name="lebar" value="{{$row->lebar}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                        <div class="w-1/2">
+                                                            <label for="panjang" class="block text-sm font-medium text-gray-700">Panjang
+                                                                (cm)</label>
+                                                            <input type="number" id="panjang" name="panjang" value="{{$row->panjang}}" required
+                                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-end">
+                                                        <button type="submit"
+                                                            class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                                            Ubah
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="penulis"
-                                                        class="block text-sm font-medium text-gray-700">Penulis</label>
-                                                    <input type="text" id="penulis" name="penulis"
-                                                        value="{{$row->penulis}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                                <div class="w-1/2">
-                                                    <label for="judul_buku"
-                                                        class="block text-sm font-medium text-gray-700">Judul
-                                                        Buku</label>
-                                                    <input type="text" id="judul_buku" name="judul_buku"
-                                                        value="{{$row->judul_buku}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <label for="deskripsi"
-                                                    class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                                <textarea id="deskripsi" name="deskripsi" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">{{$row->deskripsi}}</textarea>
-                                            </div>
-                                            <div>
-                                                <p class="block text-sm font-medium text-gray-700 font-bold">
-                                                    Detail Buku</p>
-                                            </div>
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="harga"
-                                                        class="block text-sm font-medium text-gray-700">Harga</label>
-                                                    <input type="number" id="harga" name="harga" value="{{$row->harga}}"
-                                                        required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                                <div class="w-1/2">
-                                                    <label for="gambar"
-                                                        class="block text-sm font-medium text-gray-700">Gambar</label>
-                                                    <input type="file" id="gambar" name="gambar_buku"
-                                                        value="{{$row->gambar_buku}}"
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-medium file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300">
-                                                </div>
-                                            </div>
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="jumlah_halaman"
-                                                        class="block text-sm font-medium text-gray-700">Jumlah
-                                                        Halaman</label>
-                                                    <input type="number" id="jumlah_halaman" name="jumlah_halaman"
-                                                        value="{{$row->jumlah_halaman}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                                <div class="w-1/2">
-                                                    <label for="tgl_terbit"
-                                                        class="block text-sm font-medium text-gray-700">Tanggal
-                                                        Terbit</label>
-                                                    <input type="date" id="tgl_terbit" name="tgl_terbit"
-                                                        value="{{$row->tgl_terbit}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                            </div>
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="isbn"
-                                                        class="block text-sm font-medium text-gray-700">ISBN</label>
-                                                    <input type="text" id="isbn" name="isbn" value="{{$row->isbn}}"
-                                                        required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                                <div class="w-1/2">
-                                                    <label for="bahasa"
-                                                        class="block text-sm font-medium text-gray-700">Bahasa</label>
-                                                    <input type="text" id="bahasa" name="bahasa"
-                                                        value="{{$row->bahasa}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                            </div>
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="penerbit"
-                                                        class="block text-sm font-medium text-gray-700">Penerbit</label>
-                                                    <input type="text" id="penerbit" name="penerbit"
-                                                        value="{{$row->penerbit}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                                <div class="w-1/2">
-                                                    <label for="berat"
-                                                        class="block text-sm font-medium text-gray-700">Berat
-                                                        (gram)</label>
-                                                    <input type="number" id="berat" name="berat" value="{{$row->berat}}"
-                                                        required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                            </div>
-                                            <div class="flex space-x-4">
-                                                <div class="w-1/2">
-                                                    <label for="lebar"
-                                                        class="block text-sm font-medium text-gray-700">Lebar
-                                                        (cm)</label>
-                                                    <input type="number" id="lebar" name="lebar" value="{{$row->lebar}}"
-                                                        required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                                <div class="w-1/2">
-                                                    <label for="panjang"
-                                                        class="block text-sm font-medium text-gray-700">Panjang
-                                                        (cm)</label>
-                                                    <input type="number" id="panjang" name="panjang"
-                                                        value="{{$row->panjang}}" required
-                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                </div>
-                                            </div>
-                                            <div class="flex justify-end">
-                                                <button type="submit"
-                                                    class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                                                    Ubah
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                </td>
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

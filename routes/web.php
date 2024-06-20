@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardAdminProdukController;
 use App\Http\Controllers\DashboardAdminPesananController;
 use App\Http\Controllers\DashboardAdminRekapanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DetailProdukController;
 use App\Http\Controllers\FormPembayaranController;
 use App\Http\Controllers\RingkasanController;
@@ -33,9 +34,18 @@ use App\Http\Controllers\KategoriAdminController;
 Route::get('/', [HomeController::class, 'index']);
 
 
+Route::get('produk', [ProdukController::class, 'index']);
+Route::get('produk/Edit/{id}/', [ProdukController::class, 'edit']);
+Route::get('produk/create/{id}/', [ProdukController::class, 'create'])->name('produk.create');
+Route::post('produk/Store', [ProdukController::class, 'store']);
+Route::get('produk/Delete/{id}', [ProdukController::class, 'destroy']);
+
+Route::get('/', [HomeController::class, 'index']);
+
 //Login//
 Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm'])->name('login_pembeli');
 Route::post('/login_proses', [LoginPembeliController::class, 'login_proses'])->name('login_proses');
+
 
 
 //Registrasi//
@@ -95,13 +105,16 @@ Route::get('/list_produk', [ListProdukController::class, 'show'])->name('produk.
 Route::post('/list_produk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
 Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
 
-
-//api//
 Route::get('api/produk', [ApiController::class, 'index']);
 Route::get('api/produk', [ApiController::class, 'index']);
 Route::get('api/list', [ApiController::class, 'getProduct']);
 
 
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm']);
+Route::post('/login-admin', [LoginAdminController::class, 'processLogin']);
 
 
 //login admin//
@@ -109,6 +122,10 @@ Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm'])->name
 Route::post('/login_proses_admin', [LoginAdminController::class, 'login_proses_admin'])->name('login_proses_admin');
 
 
+Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index']);
+Route::post('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'store']);
+Route::post('/dashboard-admin-produk/update/{id}', [DashboardAdminProdukController::class, 'update']);
+Route::post('/dashboard-admin-produk/hapus/{id}', [DashboardAdminProdukController::class, 'destroy']);
 
 //register admin//
 Route::get('/register-admin', [LoginAdminController::class, 'showRegisterForm'])->name('register-admin');
@@ -142,6 +159,20 @@ Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 
 //dashboard admin rekapan//
 Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
 
+Route::get('/detail-produk', [DetailProdukController::class, 'index']);
+
+Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
+Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
+
+
+Route::get('/cetak-resi', [ResiController::class, 'showForm']);
+Route::get('/generate-pdf', [ResiController::class, 'generatePDF']);
+
+Route::get('/kategori/{kategori}', [KategoriController::class, 'index'])->name('kategori.index');
+
+Route::get('/ringkasan', [RingkasanController::class, 'index'])->name('ringkasan');
+
+Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 
 //dashboard admin pembayaran//
 Route::get('/dashboard-admin-kategori', [KategoriAdminController::class, 'tampilkan']);

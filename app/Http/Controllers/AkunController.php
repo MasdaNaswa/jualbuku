@@ -8,6 +8,6 @@ class AkunController extends Controller
 {
     public function tampilkan()
     {
-        return view('akun'); // Remove the .php extension
+        return view('layout/akun'); // Remove the .php extension
     }
 }

@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <title>Landing Library</title>
 </head>
+
 <body class="font-montserrat">
     <div class="flex min-h-screen 2xl:max-w-7xl 2xl:mx-auto 2xl:border-x-2 2xl:border-indigo-50 ">
         <!-- Sidebar -->
@@ -63,6 +64,11 @@
                             d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z">
                     </svg>
                     <span>Rekapan</span>
+                </a>
+                <a class=" flex items-center space-x-2 py-1  font-bold group hover:border-r-2 hover:border-r-indigo-700 pr-20 text-white"
+                    href="dashboard-admin-rekapan">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M19 4h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm.002 16H5V8h14l.002 12z"></path><path d="m11 17.414 5.707-5.707-1.414-1.414L11 14.586l-2.293-2.293-1.414 1.414z"></path></svg>
+                    <span>Status</span>
                 </a>
                 <a class="flex items-center space-x-2 py-1 group hover:border-r-2 hover:border-r-indigo-700 font-bold"
                     href="dashboard-admin-pesan">
@@ -122,6 +128,15 @@
                                         <i class='bx bxs-file-blank'></i>
                                     </div>
                                 </div>
+                                <div class="card">
+                                    <div>
+                                        <div class="numbers" href="dashboard-admin-rekapan">Status</div>
+                                        <div class="cardName"></div>
+                                    </div>
+                                    <div class="iconBx">
+                                        <i class='bx bx-calendar-check'></i>
+                                    </div>
+                                </div>
                             </div>
                 </div>
 
@@ -132,4 +147,5 @@
                 <script src="bootstrap/js/bootstrap.min.js"></script>
                 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </body>
+
 </html>

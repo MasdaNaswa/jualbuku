@@ -16,7 +16,7 @@
                         <div>
                             <input type="text" name="nama_pengguna" id="name" value="{{ old('nama_pengguna')}}"
                                 class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-400"
-                                type="text" placeholder="name Pengguna" required>
+                                type="text" placeholder="Nama Pengguna" required>
                         </div>
                         @error('nama_pengguna')
                                 <small>{{ $message}}</small>

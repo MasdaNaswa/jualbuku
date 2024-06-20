@@ -1,5 +1,4 @@
 <?php
-// app/Models/User.php
 
 namespace App\Models;
 
@@ -7,12 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Penjual extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'users';
-    protected $fillable = ['nama_pengguna', 'email', 'password',]; // Tambahkan harg
-    public $timestamps = false;
+    protected $table = 'penjual';
 
+    protected $fillable = [
+        'nama_pengguna', 'email', 'password',
+    ];
+
+    public $timestamps = false;
 }

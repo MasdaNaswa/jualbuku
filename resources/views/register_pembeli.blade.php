@@ -1,5 +1,5 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<form>
+<form action="{{ route('register_proses')}}" method="POST">
 <div class="absolute top-0 left-0 h-full w-full overflow-hidden">
     <div class="bg-cover bg-center h-full w-full"
         style="background-image: url('https://img.freepik.com/free-photo/high-angle-view-laptop-stationeries-blue-background_23-2147880456.jpg?w=900&t=st=1711075084~exp=1711075684~hmac=d5ddc912ce6e4efb0c6259226d6b4037dbffc5e32d2d31b1ffc7b7a6cea3b014');">
@@ -14,17 +14,23 @@
                     @csrf
                     <div class="space-y-6">
                         <div>
-                            <input name="name" id="name"
+                            <input type="text" name="nama_pengguna" id="name" value="{{ old('nama_pengguna')}}"
                                 class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-400"
                                 type="text" placeholder="name Pengguna" required>
                         </div>
+                        @error('nama_pengguna')
+                                <small>{{ $message}}</small>
+                            @enderror
                         <div>
-                            <input name="email" id="email"
+                            <input type="text" name="email" id="email" value="{{ old('email')}}"
                                 class="w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-400"
                                 type="email" placeholder="Email" required>
                         </div>
+                        @error('email')
+                                <small>{{ $message}}</small>
+                            @enderror
                         <div class="relative" x-data="{ show: true }">
-                            <input name="password" id="password" placeholder="Kata Sandi"
+                            <input name="password" id="password" name="password" placeholder="Kata Sandi"
                                 :type="show ? 'password' : 'text'"
                                 class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-blue-400"
                                 required>
@@ -45,8 +51,11 @@
                                 </svg>
                             </div>
                         </div>
+                        @error('password')
+                                <small>{{ $message}}</small>
+                            @enderror
                         <div class="relative" x-data="{ show: true }">
-                            <input name="konfirmasi_kata_sandi" id="konfirmasi_kata_sandi"
+                            <input name="password_confirmation" id="password_confirmation"
                                 placeholder="Konfirmasi Kata Sandi" :type="show ? 'password' : 'text'"
                                 class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-blue-400"
                                 required>
@@ -67,6 +76,9 @@
                                 </svg>
                             </div>
                         </div>
+                        @error('password')
+                        <small>{{ $message}}</small>
+                        @enderror
                         <div class="mb-7 text-center">
                             <p class="text-gray-400 text-s">Sudah Punya Akun? <a href="login-pembeli"
                                     class="text-sm text-blue-400 hover:text-blue-700">Masuk</a></p>

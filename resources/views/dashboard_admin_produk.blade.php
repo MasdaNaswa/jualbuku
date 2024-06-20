@@ -117,12 +117,6 @@
                     <button type="button"
                         class="flex items-center justify-between w-full py-2 px-1.5 text-sm font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700"
                         data-accordion-target="#price-body" aria-expanded="true" aria-controls="price-body">
-                        <span>Price</span>
-                        <svg aria-hidden="true" data-accordion-icon="" class="w-5 h-5 rotate-180 shrink-0"
-                            fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                        </svg>
                     </button>
                 </h2>
                 <div class="container mx-auto">
@@ -140,261 +134,323 @@
                                     <th class="py-2 px-4 border-b text-sm">Harga</th>
                                     <th class="py-2 px-4 border-b text-sm">Aksi</th>
                                 </tr>
-                                </theadclass>
-                            <tbody></tbody>
-                            <div id="modal"
-                                class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
-                                <div class="bg-white p-8 rounded-lg shadow-lg w-1/2 max-h-full overflow-y-auto">
-                                    <div class="flex justify-between items-center mb-4">
-                                        <h2 class="text-2xl font-bold text-gray-700">Tambah Data Produk</h2>
-                                        <button id="closeModal"
-                                            class="text-gray-600 hover:text-gray-900">&times;</button>
-                                    </div>
-                                    <form action="" method="POST" class="space-y-4">
-                                        @csrf
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="kategori"
-                                                    class="block text-sm font-medium text-gray-700">Kategori</label>
-                                                <select id="kategori" name="kategori" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                                    <option value="" disabled selected style="color: black;">Pilih
-                                                        Kategori</option>
-                                                    <option value="kategori1" style="color: black;">Fiksi</option>
-                                                    <option value="kategori2" style="color: black;">Non-Fiksi</option>
-                                                    <option value="kategori3" style="color: black;">Sains</option>
-                                                    <option value="kategori4" style="color: black;">Komik</option>
-                                                    <option value="kategori5" style="color: black;">Novel</option>
-                                                </select>
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="stok"
-                                                    class="block text-sm font-medium text-gray-700">Stok</label>
-                                                <input type="number" id="stok" name="stok" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                        </div>
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="penulis"
-                                                    class="block text-sm font-medium text-gray-700">Penulis</label>
-                                                <input type="text" id="penulis" name="penulis" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="judul_buku"
-                                                    class="block text-sm font-medium text-gray-700">Judul
-                                                    Buku</label>
-                                                <input type="text" id="judul_buku" name="judul_buku" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="deskripsi"
-                                                class="block text-sm font-medium text-gray-700">Deskripsi</label>
-                                            <textarea id="deskripsi" name="deskripsi" required
-                                                class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"></textarea>
-                                        </div>
-                                        <div>
-                                            <p class="block text-sm font-medium text-gray-700 font-bold">Detail Buku</p>
-                                        </div>
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="harga"
-                                                    class="block text-sm font-medium text-gray-700">Harga</label>
-                                                <input type="number" id="harga" name="harga" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="gambar"
-                                                    class="block text-sm font-medium text-gray-700">Gambar</label>
-                                                <input type="file" id="gambar" name="gambar"
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-medium file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300">
-                                            </div>
-                                        </div>
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="jumlah_halaman"
-                                                    class="block text-sm font-medium text-gray-700">Jumlah
-                                                    Halaman</label>
-                                                <input type="number" id="jumlah_halaman" name="jumlah_halaman" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="tanggal_terbit"
-                                                    class="block text-sm font-medium text-gray-700">Tanggal
-                                                    Terbit</label>
-                                                <input type="date" id="tanggal_terbit" name="tanggal_terbit" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                        </div>
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="isbn"
-                                                    class="block text-sm font-medium text-gray-700">ISBN</label>
-                                                <input type="text" id="isbn" name="isbn" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="bahasa"
-                                                    class="block text-sm font-medium text-gray-700">Bahasa</label>
-                                                <input type="text" id="bahasa" name="bahasa" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                        </div>
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="penerbit"
-                                                    class="block text-sm font-medium text-gray-700">Penerbit</label>
-                                                <input type="text" id="penerbit" name="penerbit" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="berat" class="block text-sm font-medium text-gray-700">Berat
-                                                    (gram)</label>
-                                                <input type="number" id="berat" name="berat" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                        </div>
-                                        <div class="flex space-x-4">
-                                            <div class="w-1/2">
-                                                <label for="lebar" class="block text-sm font-medium text-gray-700">Lebar
-                                                    (cm)</label>
-                                                <input type="number" id="lebar" name="lebar" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                            <div class="w-1/2">
-                                                <label for="panjang"
-                                                    class="block text-sm font-medium text-gray-700">Panjang
-                                                    (cm)</label>
-                                                <input type="number" id="panjang" name="panjang" required
-                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-end">
-                                            <button type="submit"
-                                                class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                                                Tambah
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                    </div>
-                    <tbody>
-                        <tr>
-                            <td class="py-2 px-4 border-b"><img src="https://via.placeholder.com/50" alt="Gambar Buku"
-                                    class="w-16 h-16 object-cover"></td>
-                            <td class="py-2 px-4 border-b text-black text-sm">Fiksi</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">20</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">John Doe</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">Judul </td>
-                            <td class="py-2 px-4 border-b max-w-xs whitespace-normal text-black text-sm">Ini adalah
-                                deskripsi
-                                buku yang
-                                sangat panjang untuk menunjukkan bahwa teks akan membungkus dan tidak memanjang secara
-                                horizontal.</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">Rp100.000</td>
-                            <td class="py-2 px-4 border-b">
-                                <div class="flex space-x-2">
-                                    <div class="flex space-x-2">
-                                        <button type="button" data-modal-target="delete-modal"
-                                            data-modal-toggle="delete-modal"
-                                            class="py-2 px-4 flex justify-center items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm text-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd"
-                                                    d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                        </button>
-                                        <button type="button" id="openUpdateFormButton"
-                                            class="py-2 px-4 flex justify-center items-center text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-500 dark:hover:bg-green-600 dark:focus:ring-green-700">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path
-                                                    d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                                                <path fill-rule="evenodd"
-                                                    d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </div>
-                <!-- Modal Konfirmasi Hapus -->
-                <div id="delete-modal" tabindex="-1" aria-hidden="true"
-                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
-                    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                            <div class="flex justify-end p-2">
-                                <button type="button"
-                                    class="text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                                    data-modal-hide="delete-modal">
-                                    <svg aria-hidden="true" class="w-5 h-5" fill="black" stroke="CurrentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z">
-                                        </path>
-                                    </svg>
-                                    <span class="sr-only">Close modal</span>
-                                </button>
+                            </thead>
+                            <tbody>
+                                @foreach($data as $row)
+                                <tr>
+                                    <td class="py-2 px-4 border-b">
+                                        <img src="{{asset('images/produk/' . $row->gambar_buku)}}" alt="Gambar Buku"
+                                            class="w-16 h-50 object-cover">
+                                    </td>
+                                    <td class="py-2 px-4 border-b text-black text-sm">{{ $row->nama_kategori }}</td>
+                                    <td class="py-2 px-4 border-b text-black text-sm">{{ $row->stok }}</td>
+                                    <td class="py-2 px-4 border-b text-black text-sm">{{ $row->penulis }}</td>
+                                    <td class="py-2 px-4 border-b text-black text-sm">{{ $row->judul_buku }}</td>
+                                    <td class="py-2 px-4 border-b max-w-xs whitespace-normal text-black text-sm">
+                                        {{ $row->deskripsi }}
+                                    </td>
+                                    <td class="py-2 px-4 border-b text-black text-sm">
+                                        Rp. {{ number_format($row->harga, 0, ',', '.') }}
+                                    </td>
+                                    <td class="py-2 px-4 border-b">
+                                        <div class="flex space-x-2">
+                                            <div class="flex space-x-2">
+                                                <button type="button" data-modal-target="delete-modal{{$row->Id}}"
+                                                    data-modal-toggle="delete-modal{{$row->Id}}"
+                                                    class="py-2 px-4 flex justify-center items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm text-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
 
-                            </div>
-                            <div class="p-6 text-center">
-                                <div class="flex justify-center mb-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60"
-                                        fill="gray" stroke="CurrentColor">
-                                        <path
-                                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
-                                    </svg>
+                                                <button type="button" data-modal-target="edit-modal{{$row->Id}}"
+                                                    data-modal-toggle="edit-modal{{$row->Id}}"
+                                                    class="py-2 px-4 flex justify-center items-center text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-500 dark:hover:bg-green-600 dark:focus:ring-green-700">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path
+                                                            d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modal Konfirmasi Hapus -->
+                                        @foreach($data as $row)
+                                <tr>
+                                    <td class="py-2 px-4 border-b">
+                                        <img src="{{ asset('images/produk/' . $row->gambar_buku) }}" alt="Gambar Buku"
+                                            class="w-16 h-50 object-cover">
+                                    </td>
+                                    <!-- Modal Konfirmasi Hapus -->
+                                    <div id="delete-modal{{$row->id}}" tabindex="-1" aria-hidden="true"
+                                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center">
+                                        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                                <div class="flex justify-end p-2">
+                                                    <button type="button"
+                                                        class="text-gray-400 bg-gray-100 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                                                        data-modal-hide="delete-modal{{$row->id}}">
+                                                        <svg aria-hidden="true" class="w-5 h-5" fill="black"
+                                                            stroke="CurrentColor" viewBox="0 0 20 20"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="sr-only">Close modal</span>
+                                                    </button>
+                                                </div>
+                                                <div class="p-6 text-center">
+                                                    <div class="flex justify-center mb-4">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                                            width="60" height="60" fill="gray" stroke="CurrentColor">
+                                                            <path
+                                                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                                                        </svg>
+                                                    </div>
+                                                    <h3 class="mb-5 text-lg font-bold text-black dark:text-gray-400">
+                                                        Lanjutkan Hapus?
+                                                    </h3>
+                                                    <form
+                                                        action="{{ route('dashboard-admin-produk.destroy', $row->id)}}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button data-modal-hide="delete-modal{{$row->id}}" type="submit"
+                                                            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                                            Ya
+                                                        </button>
+                                                        <button data-modal-hide="delete-modal{{$row->id}}" type="button"
+                                                            class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                                                            Tidak
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                                @endforeach
+
+                                <!-- Modal Edit -->
+                                <div id="edit-modal{{$row->Id}}"
+                                    class="fixed inset-0 overflow-hidden z-50 flex justify-center items-center hidden">
+                                    <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
+                                    <div
+                                        class="bg-white rounded-lg shadow-xl p-8 w-1/2 relative z-10 max-h-screen overflow-y-auto">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <h2 class="text-2xl font-bold text-gray-700">Ubah Data Produk</h2>
+                                            <button data-modal-hide="edit-modal{{$row->Id}}"
+                                                class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+                                        </div>
+                                        <form action="{{route ('dashboard-admin-produk.update', $row->id)}}"
+                                            method="POST" class="space-y-4" enctype="multipart/form-data">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="kategori"
+                                                        class="block text-sm font-medium text-gray-700">Kategori</label>
+                                                    <select id="kategori" name="nama_kategori" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                        <option value="Sains" style="color: black;"
+                                                            {{$row->nama_kategori == 'Sains' ? 'selected':''}}>
+                                                            Sains</option>
+                                                        <option value="Bisnis" style="color: black;"
+                                                            {{$row->nama_kategori == 'Bisnis' ? 'selected':''}}>
+                                                            Bisnis</option>
+                                                        <option value="Komik" style="color: black;"
+                                                            {{$row->nama_kategori == 'Komik' ? 'selected':''}}>
+                                                            Komik</option>
+                                                        <option value="Fiksi" style="color: black;"
+                                                            {{$row->nama_kategori == 'Fiksi' ? 'selected':''}}>
+                                                            Fiksi</option>
+                                                        <option value="Nonfiksi" style="color: black;"
+                                                            {{$row->nama_kategori == 'Nonfiksi' ? 'selected':''}}>
+                                                            Nonfiksi</option>
+                                                    </select>
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="stok"
+                                                        class="block text-sm font-medium text-gray-700">Stok</label>
+                                                    <input type="number" id="stok" name="stok" value="{{$row->stok}}"
+                                                        required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="penulis"
+                                                        class="block text-sm font-medium text-gray-700">Penulis</label>
+                                                    <input type="text" id="penulis" name="penulis"
+                                                        value="{{$row->penulis}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="judul_buku"
+                                                        class="block text-sm font-medium text-gray-700">Judul
+                                                        Buku</label>
+                                                    <input type="text" id="judul_buku" name="judul_buku"
+                                                        value="{{$row->judul_buku}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label for="deskripsi"
+                                                    class="block text-sm font-medium text-gray-700">Deskripsi</label>
+                                                <textarea id="deskripsi" name="deskripsi" required
+                                                    class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">{{$row->deskripsi}}</textarea>
+                                            </div>
+                                            <div>
+                                                <p class="block text-sm font-medium text-gray-700 font-bold">
+                                                    Detail Buku</p>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="harga"
+                                                        class="block text-sm font-medium text-gray-700">Harga</label>
+                                                    <input type="number" id="harga" name="harga" value="{{$row->harga}}"
+                                                        required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="gambar"
+                                                        class="block text-sm font-medium text-gray-700">Gambar</label>
+                                                    <input type="file" id="gambar" name="gambar_buku"
+                                                        value="{{$row->gambar_buku}}"
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-medium file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300">
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="jumlah_halaman"
+                                                        class="block text-sm font-medium text-gray-700">Jumlah
+                                                        Halaman</label>
+                                                    <input type="number" id="jumlah_halaman" name="jumlah_halaman"
+                                                        value="{{$row->jumlah_halaman}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="tgl_terbit"
+                                                        class="block text-sm font-medium text-gray-700">Tanggal
+                                                        Terbit</label>
+                                                    <input type="date" id="tgl_terbit" name="tgl_terbit"
+                                                        value="{{$row->tgl_terbit}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="isbn"
+                                                        class="block text-sm font-medium text-gray-700">ISBN</label>
+                                                    <input type="text" id="isbn" name="isbn" value="{{$row->isbn}}"
+                                                        required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="bahasa"
+                                                        class="block text-sm font-medium text-gray-700">Bahasa</label>
+                                                    <input type="text" id="bahasa" name="bahasa"
+                                                        value="{{$row->bahasa}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="penerbit"
+                                                        class="block text-sm font-medium text-gray-700">Penerbit</label>
+                                                    <input type="text" id="penerbit" name="penerbit"
+                                                        value="{{$row->penerbit}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="berat"
+                                                        class="block text-sm font-medium text-gray-700">Berat
+                                                        (gram)</label>
+                                                    <input type="number" id="berat" name="berat" value="{{$row->berat}}"
+                                                        required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-4">
+                                                <div class="w-1/2">
+                                                    <label for="lebar"
+                                                        class="block text-sm font-medium text-gray-700">Lebar
+                                                        (cm)</label>
+                                                    <input type="number" id="lebar" name="lebar" value="{{$row->lebar}}"
+                                                        required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                                <div class="w-1/2">
+                                                    <label for="panjang"
+                                                        class="block text-sm font-medium text-gray-700">Panjang
+                                                        (cm)</label>
+                                                    <input type="number" id="panjang" name="panjang"
+                                                        value="{{$row->panjang}}" required
+                                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-end">
+                                                <button type="submit"
+                                                    class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                                    Ubah
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-                                <h3 class="mb-5 text-lg font-bold text-black dark:text-gray-400">
-                                    Lanjutkan Hapus?
-                                </h3>
-                                <button data-modal-hide="delete-modal" type="button"
-                                    class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                    Ya
-                                </button>
-                                <button data-modal-hide="delete-modal" type="button"
-                                    class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                    Tidak
-                                </button>
-                            </div>
-                        </div>
+                                </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
                     </div>
                 </div>
-                <div id="drawer-update-product"
-                    class="fixed inset-0 overflow-hidden z-50 flex justify-center items-center hidden">
-                    <div class="absolute inset-0 bg-gray-600 opacity-75"></div>
-                    <div class="bg-white rounded-lg shadow-xl p-8 w-1/2 relative z-10 max-h-screen overflow-y-auto">
+
+                <!-- Modal tambah produk -->
+                <div id="modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+                    <div class="bg-white p-8 rounded-lg shadow-lg w-1/2 max-h-full overflow-y-auto">
                         <div class="flex justify-between items-center mb-4">
-                            <h2 class="text-2xl font-bold text-gray-700">Ubah Data Produk</h2>
-                            <button id="closeDrawerUpdate"
-                                class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+                            <h2 class="text-2xl font-bold text-gray-700">Tambah Data Produk</h2>
+                            <button id="closeModal" class="text-gray-600 hover:text-gray-900">&times;</button>
                         </div>
-                        <form action="#" method="POST" class="space-y-4">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
+                        <form action="" method="POST" class="space-y-4" enctype="multipart/form-data">
+                            @csrf
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="kategori"
                                         class="block text-sm font-medium text-gray-700">Kategori</label>
-                                    <input type="text" id="kategori" name="kategori" required
+                                    <select id="kategori" name="nama_kategori" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
+                                        <option value="" disabled selected style="color: black;">
+                                            Pilih Kategori
+                                        </option>
+                                        <option value="Sains" style="color: black;">Sains</option>
+                                        <option value="Bisnis" style="color: black;">Bisnis</option>
+                                        <option value="Komik" style="color: black;">Komik</option>
+                                        <option value="Fiksi" style="color: black;">Fiksi</option>
+                                        <option value="Nonfiksi" style="color: black;">Nonfiksi</option>
+                                    </select>
                                 </div>
-                                <div>
+                                <div class="w-1/2">
                                     <label for="stok" class="block text-sm font-medium text-gray-700">Stok</label>
                                     <input type="number" id="stok" name="stok" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="penulis" class="block text-sm font-medium text-gray-700">Penulis</label>
                                     <input type="text" id="penulis" name="penulis" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                                <div class="w-1/2">
                                     <label for="judul_buku" class="block text-sm font-medium text-gray-700">Judul
                                         Buku</label>
                                     <input type="text" id="judul_buku" name="judul_buku" required
@@ -409,58 +465,66 @@
                             <div>
                                 <p class="block text-sm font-medium text-gray-700 font-bold">Detail Buku</p>
                             </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="harga" class="block text-sm font-medium text-gray-700">Harga</label>
                                     <input type="number" id="harga" name="harga" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                                <div class="w-1/2">
                                     <label for="gambar" class="block text-sm font-medium text-gray-700">Gambar</label>
-                                    <input type="file" id="gambar" name="gambar"
-                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-100 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-medium file:bg-blue-100 file:text-gray-700 hover:file:bg-blue-100">
+                                    <input type="file" id="gambar" name="gambar_buku"
+                                        class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-medium file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300">
                                 </div>
-                                <div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="jumlah_halaman" class="block text-sm font-medium text-gray-700">Jumlah
                                         Halaman</label>
                                     <input type="number" id="jumlah_halaman" name="jumlah_halaman" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
-                                    <label for="tanggal_terbit" class="block text-sm font-medium text-gray-700">Tanggal
+                                <div class="w-1/2">
+                                    <label for="tgl_terbit" class="block text-sm font-medium text-gray-700">Tanggal
                                         Terbit</label>
-                                    <input type="date" id="tanggal_terbit" name="tanggal_terbit" required
+                                    <input type="date" id="tgl_terbit" name="tgl_terbit" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="isbn" class="block text-sm font-medium text-gray-700">ISBN</label>
                                     <input type="text" id="isbn" name="isbn" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                                <div class="w-1/2">
                                     <label for="bahasa" class="block text-sm font-medium text-gray-700">Bahasa</label>
                                     <input type="text" id="bahasa" name="bahasa" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="penerbit"
                                         class="block text-sm font-medium text-gray-700">Penerbit</label>
                                     <input type="text" id="penerbit" name="penerbit" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                                <div class="w-1/2">
                                     <label for="berat" class="block text-sm font-medium text-gray-700">Berat
                                         (gram)</label>
                                     <input type="number" id="berat" name="berat" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                            </div>
+                            <div class="flex space-x-4">
+                                <div class="w-1/2">
                                     <label for="lebar" class="block text-sm font-medium text-gray-700">Lebar
                                         (cm)</label>
                                     <input type="number" id="lebar" name="lebar" required
                                         class="mt-1 p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black">
                                 </div>
-                                <div>
+                                <div class="w-1/2">
                                     <label for="panjang" class="block text-sm font-medium text-gray-700">Panjang
                                         (cm)</label>
                                     <input type="number" id="panjang" name="panjang" required
@@ -469,17 +533,14 @@
                             </div>
                             <div class="flex justify-end">
                                 <button type="submit"
-                                    class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300">
-                                    Simpan Perubahan
+                                    class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                                    Tambah
                                 </button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            </td>
-            </tr>
-            </tbody>
             </table>
         </div>
         <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
@@ -495,8 +556,7 @@
                     <a href="#"
                         class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                         <span class="sr-only">Previous</span>
-                        <svg class="w-5 h-5"  fill="gray" viewbox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-5 h-5" fill="gray" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                                 clip-rule="evenodd" />
@@ -527,8 +587,7 @@
                     <a href="#"
                         class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                         <span class="sr-only">Next</span>
-                        <svg class="w-5 h-5"  fill="gray" viewbox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-5 h-5" fill="gray" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd" />

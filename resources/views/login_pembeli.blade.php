@@ -12,18 +12,21 @@
                     <div class="mb-7 text-center">
                         <h3 class="font-bold text-2xl text-blue-400">Masuk Akun </h3>
                     </div>
-                    <form action="login" method="POST">
+                    <form action="{{route('login_proses')}}" method="POST">
+                        @csrf
                         <div class="space-y-6">
                             <div class="">
                                 <input
                                     class=" w-full text-sm  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-blue-400"
-                                    type="" placeholder="Nama Pengguna">
+                                    type="text" name="nama_pengguna" placeholder="Nama Pengguna">
                             </div>
+                            @error('nama_pengguna')
+                                <small>{{ $message}}</small>
+                            @enderror
                             <div class="relative" x-data="{ show: true }">
-                                <input placeholder="Kata Sandi" :type="show ? 'password' : 'text'"
+                                <input placeholder="Kata Sandi" :type="show ? 'password' : 'text'" name="password"
                                     class="text-sm text-black-200 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-purple-400">
                                 <div class="flex items-center absolute inset-y-0 right-0 mr-3  text-sm leading-5">
-
                                     <svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
                                         class="h-4 text-blue-500" fill="none" xmlns="http://www.w3.org/2000/svg"
                                         viewbox="0 0 576 512">
@@ -39,19 +42,21 @@
                                             d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z">
                                         </path>
                                     </svg>
-
                                 </div>
                             </div>
+                            @error('password')
+                            <small>{{ $message}}</small>
+                        @enderror
                             <div class="flex items-center justify-between">
 
                                 <div class="text-xs ml-auto">
-                                    <a href="lupa-kata-sandi" class="text-blue-400 hover:text-blue-700">
+                                    <a href="{{route('lupa')}}" class="text-blue-400 hover:text-blue-700">
                                         Lupa Kata Sandi?
                                     </a>
                                 </div>
                             </div>
                             <div class="mb-7 text-center">
-                                <p class="text-gray-400 text-s">Belum Mendaftar? <a href="register-pembeli"
+                                <p class="text-gray-400 text-s">Belum Mendaftar? <a href="{{route('register-pembeli')}}"
                                         class="text-sm text-blue-400 hover:text-blue-700">Daftar</a></p>
                             </div>
 
@@ -70,3 +75,13 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if($message = Session::get('failed'))
+    <script>
+        Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "Nama Pengguna atau Password!",
+});
+    </script>
+    @endif

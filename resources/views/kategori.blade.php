@@ -144,11 +144,6 @@
         </div>
     </div>
     </div>
-
-
-
-
-
     <div class="py-20 px-5">
         <footer>
             @include('components.footer')

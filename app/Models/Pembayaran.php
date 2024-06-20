@@ -1,14 +1,26 @@
 <?php
 
-// Controller (FormPembayaranController.php)
+namespace App\Models;
 
-namespace App\Http\Controllers;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request; // Import class Request
 
-use Illuminate\Http\Request;
-use App\Models\Pembayaran; 
-
-class FormPembayaranController extends Controller
+class Pembayaran extends Model
 {
+    protected $table = 'tblPembayaran'; 
+
+    protected $fillable = [
+        'alamat_lengkap',
+        'provinsi',
+        'kabupaten',
+        'kecamatan',
+        'kodePos',
+        'nomorTelephone',
+        'metodePembayaran',
+        'metodePengiriman',
+    ];
+
     public function showForm()
     {
         return view('form_pembayaran');
@@ -17,7 +29,7 @@ class FormPembayaranController extends Controller
     public function processPayment(Request $request)
     {
         $request->validate([
-            'alamatLengkap' => 'required|string|max:255',
+            'alamat_lengkap' => 'required|string|max:255',
             'provinsi' => 'required|string|max:255',
             'kabupaten' => 'required|string|max:255',
             'kecamatan' => 'required|string|max:255',
@@ -27,8 +39,9 @@ class FormPembayaranController extends Controller
             'metodePengiriman' => 'required|string',
         ]);
 
-        $pembayaran = new Tblpembayaran();
-        $pembayaran->alamat_lengkap = $request->input('alamatLengkap');
+        
+        $pembayaran = new Pembayaran();
+        $pembayaran->alamat_lengkap = $request->input('alamat_lengkap');
         $pembayaran->provinsi = $request->input('provinsi');
         $pembayaran->kabupaten = $request->input('kabupaten');
         $pembayaran->kecamatan = $request->input('kecamatan');
@@ -36,9 +49,8 @@ class FormPembayaranController extends Controller
         $pembayaran->nomorTelephone = $request->input('nomorTelephone');
         $pembayaran->metodePembayaran = $request->input('metodePembayaran');
         $pembayaran->metodePengiriman = $request->input('metodePengiriman');
+        $pembayaran->save(); 
         
         return redirect()->route('payment.form')->with('success', 'Payment information submitted successfully!');
     }
 }
-
-?>

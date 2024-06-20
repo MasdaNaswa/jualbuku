@@ -24,84 +24,124 @@ use App\Http\Controllers\FormPembayaranController;
 use App\Http\Controllers\RingkasanController;
 use App\Http\Controllers\ResiController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\LupaController;
+use App\Http\Controllers\KategoriAdminController;
 
 
 
- Route::get('/', function () {
-    return view('welcome');
- });
-
- Route::get('/user/{id}', function ($id) {
-    return 'User dengan ID' . $id;
- });
-
- Route::prefix('admin')->group(function () {
-   Route::get('/dashboard', function () {
-      return 'Admin Dashboard';
-   });
-
-   Route::get('/users', function () {
-      return 'Admin Users';
-   });
- });
-
-
-
-Route::get('/listbarang/{id}/{nama}', [ListBarangController::class, 'tampilkan']);
-   
+//Tampilan Awal//
 Route::get('/', [HomeController::class, 'index']);
 
 
-Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm']);
+//Login//
+Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm'])->name('login_pembeli');
+Route::post('/login_proses', [LoginPembeliController::class, 'login_proses'])->name('login_proses');
 
 
-Route::get('/register-pembeli', [RegisterPembeliController::class, 'showForm']);
+//Registrasi//
+Route::get('/register-pembeli', [LoginPembeliController::class, 'showForm'])->name('register-pembeli');
+Route::post('/register_proses', [LoginPembeliController::class, 'register_proses'])->name('register_proses');
 
 
-Route::get('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'showLupaKataSandiForm']);
+//lupa kata sandi//
+Route::get('/lupa', [LoginPembeliController::class, 'tampilkan'])->name('lupa');
+Route::post('/lupa_proses', [LoginPembeliController::class, 'tampilkan'])->name('lupa_proses');
+Route::post('/lupa_proses', [LoginPembeliController::class, 'lupa_proses'])->name('lupa_proses');
+Route::get('/validasi_lupa/{token}', [LoginPembeliController::class, 'validasi_lupa'])->name('validasi_lupa');
+Route::post('/validasi_lupa_act', [LoginPembeliController::class, 'validasi_lupa_act'])->name('validasi_lupa_act');
 
 
-Route::get('/dashboard', [DashboardPembeliController::class, 'index']);
+//log out//
+Route::get('/logout', [LoginPembeliController::class, 'logout'])->name('logout');
 
 
+//dashboard//
+Route::get('/dashboard', [DashboardPembeliController::class, 'index'])->name('dashboard');
 
+
+//keranjang//
+Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 
+
+//akun//
 Route::get('/akun', [akunController::class, 'tampilkan']);
 
+
+//detail produk//
+Route::get('/detail-produk', [DetailProdukController::class, 'index']);
+
+
+//form pembayaran//
+Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
+Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
+
+
+//cetak Resi//
+Route::get('/cetak-resi', [ResiController::class, 'showForm']);
+Route::get('/generate-pdf', [ResiController::class, 'generatePDF']);
+
+
+//kategori//
+Route::get('/kategori/{kategori}', [KategoriController::class, 'index'])->name('kategori.index');
+
+
+//ringkasan//
+Route::get('/ringkasan', [RingkasanController::class, 'index'])->name('ringkasan');
+
+
+//list Produk//
 Route::get('/list_produk', [ListProdukController::class, 'show'])->name('produk.list');
 Route::post('/list_produk', [ListProdukController::class, 'simpan'])->name('produk.simpan');
 Route::delete('/listproduk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
+
+
+//api//
 Route::get('api/produk', [ApiController::class, 'index']);
 Route::get('api/produk', [ApiController::class, 'index']);
 Route::get('api/list', [ApiController::class, 'getProduct']);
 
 
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
-Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm']);
-Route::post('/login-admin', [LoginAdminController::class, 'processLogin']);
 
-Route::get('/register-admin', [RegisterAdminController::class, 'showRegisterForm']);
-Route::post('/register-admin', [RegisterAdminController::class, 'processRegister']);
 
-Route::get('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'showLupaKataSandiForm']);
-Route::post('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'processLupaKataSandi']);
+//login admin//
+Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm'])->name('login_admin');
+Route::post('/login_proses_admin', [LoginAdminController::class, 'login_proses_admin'])->name('login_proses_admin');
 
-Route::get('/dashboard-admin', [DashboardAdminController::class, 'index']);
 
-Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index']);
 
+//register admin//
+Route::get('/register-admin', [LoginAdminController::class, 'showRegisterForm'])->name('register-admin');
+Route::post('/register_proses_admin', [LoginAdminController::class, 'register_proses_admin'])->name('register_proses_admin');
+
+
+
+//lupa kata sandi admin//
+Route::get('/lupa_admin', [LoginAdminController::class, 'tampilkan'])->name('lupa_admin');
+Route::post('/lupa_proses', [LoginAdminController::class, 'tampilkan'])->name('lupa_proses');
+Route::post('/lupa_proses_admin', [LoginAdminController::class, 'lupa_proses_admin'])->name('lupa_proses_admin');
+Route::get('/validasi_lupa/{token}', [LoginAdminController::class, 'validasi_lupa'])->name('validasi_lupa');
+Route::post('/validasi_lupa_act_admin', [LoginAdminController::class, 'validasi_lupa_act_admin'])->name('validasi_lupa_act_admin');
+
+
+
+//dashboard admin//
+Route::get('/dashboard-admin', [DashboardAdminController::class, 'index'])->name('dashboard-admin');
+
+
+//dashboard admin produk
+Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index'])->name('dashboard-admin-produk.index');
+Route::post('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'store'])->name('dashboard-admin-produk.store');
+Route::put('/dashboard-admin-produk/{id}', [DashboardAdminProdukController::class, 'update'])->name('dashboard-admin-produk.update');
+Route::delete('/dashboard-admin-produk/{id}', [DashboardAdminProdukController::class, 'destroy'])->name('dashboard-admin-produk.destroy');
+
+//dashboard admin pesanan//
 Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
 
+
+//dashboard admin rekapan//
 Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
-Route::get('/detail-produk', [DetailProdukController::class, 'index']);
-Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
-Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
-Route::get('/cetak-resi', [ResiController::class, 'showForm']);
-Route::get('/generate-pdf', [ResiController::class, 'generatePDF']);
-Route::get('/kategori/{kategori}', [KategoriController::class, 'index'])->name('kategori.index');
 
-Route::get('/ringkasan', [RingkasanController::class, 'index'])->name('ringkasan');
-Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 
+//dashboard admin pembayaran//
+Route::get('/dashboard-admin-kategori', [KategoriAdminController::class, 'tampilkan']);

@@ -4,170 +4,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>User Account</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/boxicons"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
+<div>
+    <header>
+        <!-- Navbar -->
+        <nav class="bg-blue-900 py-4">
+            <div class="container mx-auto flex justify-between items-center px-20">
 
-<body class="bg-white">
+                <!-- Logo -->
+                <div>
+                    <a href="{{ route('dashboard') }}" class="text-white text-2xl font-bold">Landing Library</a>
+                </div>
 
-    <!-- Navbar -->
-    <nav class="bg-blue-900 py-4">
-        <div class="container mx-auto flex justify-between items-center px-20">
-
-            <!-- Logo -->
-            <div>
-                <a href="#" class="text-white text-2xl font-bold">Landing Library</a>
-            </div>
-
-            <!-- Categories -->
-            <div class="hidden md:flex space-x-4">
-                <div class="relative group ml-6">
-                    <button
-                        class="text-white text-xm font-bold hover:bg-blue-900 px-3 py-2 rounded-md inline-flex items-center">
-                        <span>Kategori </span>
-                        <svg class="h-3 w-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <div
-                        class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
-                        <!-- Adjusted width to w-full and added flex-col class -->
+                <!-- Categories -->
+                <div class="hidden md:flex space-x-4">
+                    <div class="relative group ml-6">
+                        <button
+                            class="text-white text-xm font-bold hover:bg-blue-900 px-3 py-2 rounded-md inline-flex items-center">
+                            <span>Kategori Buku</span>
+                            <svg class="h-3 w-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M19 9l-7 7-7-7">
+                                </path>
+                            </svg>
+                        </button>
                         <div
-                            class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-full">
-                            <div class="grid grid-cols-4 gap-2">
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Novel</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Komik</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Sains</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Islam</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Pelajaran</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Anak</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Cerpen</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Majalah</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Psikologi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Fantasi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Non Fiksi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Dogeng</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Biografi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Manga</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Kamus</a>
+                            class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
+                            <div class="flex flex-col">
+                                @php
+                                $kategori = \App\Models\Kategori::all();
+                                @endphp
+                                @foreach ($kategori as $item)
+                                <a href="{{ route('kategori.index', ['kategori' => $item->kategori]) }}"
+                                    class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku
+                                    {{ $item->kategori }}</a>
+                                @endforeach
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-            </div>
-            <!-- Search Bar -->
-            <div class="flex-grow mx-4">
-                <!-- Adjusted margin -->
-                <form action="#" method="GET" class="flex">
-                    <input type="text"
-                        class="w-full md:w-100 h-10 px-4 rounded-full focus:outline-none focus:ring focus:border-blue-900"
-                        placeholder="Cari disini"><!-- Adjusted width and added rounded-l-full -->
-                    <button type="submit"
-                        class="bg-blue-900 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">
-                        <!-- Adjusted button styling -->
-                        <i class='bx bx-search-alt-2'></i>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 15l-5-5m0 0l-5 5m5-5V3"></path>
-                        </svg>
-                    </button>
-                </form>
-            </div>
 
-            <!-- Login Icon -->
-            <div class="ml-4 flex items-center">
-                <a href="#" class="text-white hover:text-white">
-                    <i class='bx bxs-cart text-3xl'></i>
-                </a>
-            </div>
 
-            <div class="ml-4 flex items-center">
-                <a href="#" class="text-white hover:white">
-                    <i class='bx bxs-user-circle text-3xl'></i>
-                </a>
+
+
+                <!-- Search Bar -->
+                <div class="flex-grow mx-4">
+                    <!-- Adjusted margin -->
+                    <form action="#" method="GET" class="flex">
+                        <input type="text"
+                            class="w-full md:w-72 h-10 px-4 rounded-full focus:outline-none focus:ring focus:border-blue-900"
+                            placeholder="Cari buku disini"><!-- Adjusted width and added rounded-l-full -->
+                        <button type="submit"
+                            class="bg-blue-900 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-full">
+                            <!-- Adjusted button styling -->
+                            <i class='bx bx-search-alt-2'></i>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 15l-5-5m0 0l-5 5m5-5V3"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                @auth
+                <div class="ml-4 flex items-center">
+                    <a href="{{ route('keranjang.index') }}" class="text-white hover:text-white">
+                        <i class='bx bxs-cart text-3xl'></i>
+                    </a>
+                </div>
+
+                <div class="ml-4 flex items-center">
+                    <a href="{{ route('akun.index') }}" class="text-white hover:white">
+                        <i class='bx bxs-user-circle text-3xl'></i>
+                    </a>
+                </div>
+
+                <div class="ml-4 flex items-center">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-white hover:text-white"><i
+                                class='bx bxs-log-out text-3xl'></i></button>
+                    </form>
+                </div>
+                @endauth
+
+                @guest
+                <div class="ml-4 flex items-center">
+                    <a href="{{ route('login') }}" class="text-white hover:text-white">
+                        <i class='bx bxs-log-in text-3xl'></i>
+                    </a>
+                </div>
+                @endguest
+
+
+
             </div>
-        </div>
-    </nav>
-    <div class="absolute" style="left: 30px; top: 100px; width: 352px;">
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg ml-10 mt-5">
-            <div class="mt-5 ml-2 mr-2 flex flex-col  mb-6">
-                <div class="mt-2 ml-2 mr-2 flex flex-col items-center justify-center">
-                    <img class="w-30 h-40 rounded-full"
-                        src="https://i.pinimg.com/736x/69/ee/c5/69eec5472972a7f4676e17556cf1a425.jpg"
-                        alt="Rounded avatar">
-                    <p class="mt-4 text-2xl font-bold text-blue-900 dark:text-white">Dina Ramadhani</p>
-                    <hr class="my-4 w-full border-t-2 border-solid border-gray-300">
-                </div>
-                <div class="mt-5 ml-5 flex items-center">
-                    <box-icon type='solid' name='user' color='#5F93CB'></box-icon>
-                    <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Akun Saya</p>
-                </div>
-                <div class="mt-5 ml-5 mt-2 flex items-center">
-                    <box-icon name='clipboard' color='#5F93CB'></box-icon>
-                    <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Ringkasan Pesanan</p>
-                </div>
-                <div class="mt-5 ml-5 mt-2 flex items-center">
-                    <box-icon name='log-in-circle' color='#5F93CB'></box-icon>
-                    <p class="ml-2 text-l font-bold text-blue-900 dark:text-white">Keluar</p>
+        </nav>
+
+        <!-- Include the Alpine.js library -->
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
+
+        <!-- JavaScript to toggle dropdown -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropdownButtons = document.querySelectorAll('.relative');
+                dropdownButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        button.querySelector('.absolute').classList.toggle('hidden');
+                    });
+                });
+            });
+
+        </script>
+    </header>
+</div>
+
+<body class="bg-white font-sans antialiased">
+    <div class="container mx-auto p-6">
+        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-800">User Account</h1>
+                <button class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Logout</button>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-700">Account Name: John Doe</h2>
+            </div>
+            <div>
+                <div class="px-8 py-8 w-full h-min bg-white rounded-xl shadow-md max-md:px-5 max-h-min">
+                    <div class="flex max-md:flex-col">
+                        <div class="flex flex-col grow">
+                            <h2 class="text-2xl font-bold text-black">
+                                Pesanan Saya
+                            </h2>
+                            @foreach ($pesanan->items as $item)
+                            <div class="flex mt-4 justify-between items-start text-base font-thin text-neutral-600">
+                                <div class="flex gap-4">
+                                    <img src="{{ asset('img/produk/' . $item->produk->gambar) }}"
+                                        class="shrink-0 w-[95px]" />
+                                    <p class="">{{ $item->produk->judul_buku }}
+                                </div>
+                                <p class="text-base text-black">Rp.
+                                    {{ number_format($item->produk->harga, 0, ',', '.') }} x {{ $item->jumlah }}
+                                </p>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="absolute" style="left: 450px; top: 120px; width: 900px; height: 430px;">
-        <div class="relative shadow-md sm:rounded-lg h-full w-full overflow-hidden">
-            <div class="mt-5 ml-7 flex items-center">
-                <box-icon type="solid" name="user" color="#5F93CB" size="md"></box-icon>
-                <p class="ml-2 text-2xl font-bold text-blue-900 dark:text-white">Data Diri</p>
-            </div>
-            <div class="mt-8 ml-7">
-                <p class="text-l font-bold text-gray-900 dark:text-white mt-2">Nama Lengkap</p>
-                <div class="relative shadow-md sm:rounded-lg mt-1"
-                    style="height: 40px; width: 800px; overflow: hidden;">
-                    <div class="ml-2 mt-2 flex justify-between">
-                        <p class="text-l text-gray-900 dark:text-white">Dina</p>
-                        <a href="your-link-here" class="text-l text-gray-900 dark:text-white mr-5">Ubah</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-5 ml-7">
-                <p class="text-l font-bold text-gray-900 dark:text-white mt-2">Email</p>
-                <div class="relative shadow-md sm:rounded-lg mt-1"
-                    style="height: 40px; width: 800px; overflow: hidden;">
-                    <div class="ml-2 mt-2 flex justify-between">
-                        <p class="text-l text-gray-900 dark:text-white">dinaramadani@gmail.com</p>
-                        <a href="your-link-here" class="text-l text-gray-900 dark:text-white mr-5">Ubah</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-5 ml-7">
-                <p class="text-l font-bold text-gray-900 dark:text-white mt-2">No Telp</p>
-                <div class="relative shadow-md sm:rounded-lg mt-1"
-                    style="height: 40px; width: 800px; overflow: hidden;">
-                    <div class="ml-2 mt-2 flex justify-between">
-                        <p class="text-l text-gray-900 dark:text-white">(+62) 224 6686 4321</p>
-                        <a href="your-link-here" class="text-l text-gray-900 dark:text-white mr-5">Ubah</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-5 flex items-center justify-center">
-                <button type="button"
-                    class="px-20 py-3 text-sm font-bold text-white bg-blue-500 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-500 rounded-lg text-center dark:bg-blue-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Simpan Data
-                </button>
-            </div>
 
-        </div>
+    <div class="py-20 px-5">
+        <footer class="relative bg-[#83B1D7] pt-8 pb-6 py-20">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap text-left lg:text-left">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <h3 class="font-bold text-2xl text-blueGray-500">Landing Library </h3>
+                        <h5 class="text-xs mt-0 mb-2 text-[#374c71]" style="text-align: justify;">
+                            Landing library toko buku online menyediakan beragam koleksi yang luas dari segala jenis
+                            buku, mulai dari fiksi hingga non-fiksi, termasuk novel, ensiklopedia, buku pelajaran, dan
+                            banyak lagi, memenuhi kebutuhan pembaca dengan berbagai minat dan preferensi.
+                        </h5>
+                    </div>
+                    <div class="w-full lg:w-6/12 px-4">
+                        <div class="flex flex-wrap items-top mb-6">
+                            <div class="w-full lg:w-4/12 px-4 ml-auto">
+                                <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Kategori
+                                    Produk</span>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="#">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="#">Github</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="#">Free Products</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="w-full lg:w-4/12 px-4">
+                                <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other
+                                    Resources</span>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT
+                                            License</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp;
+                                            Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                            href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-blueGray-300">
+                <div class="flex flex-wrap items-center md:justify-between justify-center">
+                    <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+                        <div class="text-sm text-blueGray-500 font-semibold py-1">
+                            Copyright © <span id="get-current-year">2024</span><a href="#"
+                                class="text-blueGray-500 hover:text-gray-800" target="_blank">Landing Library
+                                <a href="#" class="text-blueGray-500 hover:text-blueGray-800"></a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
+</body>
 
-
-
-
-    </div>
+</html>

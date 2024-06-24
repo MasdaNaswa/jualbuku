@@ -1,5 +1,4 @@
 <?php
-// app/Models/User.php
 
 namespace App\Models;
 
@@ -11,11 +10,41 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    // Yang perlu kita tambahkan adalah fillable agar kolom yang diisi dari form dapat diisi ke dalam database
     protected $fillable = [
-        'name', 'email', 'password',
+        'username',
+        'email',
+        'password',
+        'role',
     ];
+    
     public $timestamps = false;
 
-    // Sisanya adalah bawaan dari model User yang dibuat oleh Laravel
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isPembeli(): bool
+    {
+        return $this->role === 'pembeli';
+    }
+
+    public function keranjang()
+    {
+        return $this->hasMany(Keranjang::class, 'kode_pembeli', 'id');
+    }
+
+    public function pesanan()
+    {
+        return $this->hasMany(Pesanan::class, 'kode_pembeli', 'id');
+    }
 }

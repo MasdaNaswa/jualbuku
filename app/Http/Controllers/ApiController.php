@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Tblproduk;
+use App\Models\Produk;
+use App\Models\Kategori;
+use App\Models\Keranjang;
+use App\Models\Pesanan;
+
+
 
 class ApiController extends Controller
 {
@@ -14,11 +19,44 @@ class ApiController extends Controller
         $number = range(1, 100);
         return response()->json($number);
     }
+
+
     public function getProduct()
     {
-        $data = tblproduk::all();
+        $data = produk::all();
         return response()->json($data);
     }
+
+    public function getKategori()
+    {
+        $data = kategori::all();
+        return response()->json($data);
+    }
+
+    public function getKeranjang()
+    {
+        $data = keranjang::all();
+        return response()->json($data);
+    }
+
+    public function getPesanan()
+    {
+        $data = pesanan::all();
+        return response()->json($data);
+    }
+
+    public function getPesananItems()
+    {
+        $data = pesanan_items::all();
+        return response()->json($data);
+    }
+
+    public function getUsers()
+    {
+        $data = users::all();
+        return response()->json($data);
+    }
+
 
     /**
      * Show the form for creating a new resource.

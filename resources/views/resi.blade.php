@@ -26,6 +26,7 @@
                     <div class="flex justify-between">
                         <p class="font-semibold">0824 6686 4321</p>
                         <p>Tanggal transaksi: 20-03-2024</p>
+                        
                     </div>
                 </div>
                 <div class="mt-4">

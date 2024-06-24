@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {{-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> --}}
 </head>
 
 <body class="bg-white">
@@ -17,7 +17,7 @@
 
             <!-- Logo -->
             <div>
-                <a href="dashboard" class="text-white text-2xl font-bold">Landing Library</a>
+                <a href="{{ route('dashboard') }}" class="text-white text-2xl font-bold">Landing Library</a>
             </div>
 
             <!-- Categories -->
@@ -35,11 +35,12 @@
                     <div
                         class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
                         <div class="flex flex-col">
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Cerpen</a>
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
-                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
+                            @php
+                                $kategori = \App\Models\Kategori::all();
+                            @endphp
+                            @foreach ($kategori as $item)
+                            <a href="{{ route('kategori.index', ['kategori' => $item->kategori]) }}" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku {{ $item->kategori }}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -66,18 +67,35 @@
                 </form>
             </div>
 
-            <!-- Login Icon -->
-            <div class="ml-4 flex items-center">
-                <a href="keranjang" class="text-white hover:text-white">
-                    <i class='bx bxs-cart text-3xl'></i>
-                </a>
-            </div>
+            @auth
+                <div class="ml-4 flex items-center">
+                    <a href="{{ route('keranjang.index') }}" class="text-white hover:text-white">
+                        <i class='bx bxs-cart text-3xl'></i>
+                    </a>
+                </div>
 
-            <div class="ml-4 flex items-center">
-                <a href="" class="text-white hover:white">
-                    <i class='bx bxs-user-circle text-3xl'></i>
-                </a>
-            </div>
+                <div class="ml-4 flex items-center">
+                    <a href="{{ route('akun.index') }}" class="text-white hover:white">
+                        <i class='bx bxs-user-circle text-3xl'></i>
+                    </a>
+                </div>
+                
+                <div class="ml-4 flex items-center">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="text-white hover:text-white"><i class='bx bxs-log-out text-3xl'></i></button>
+                    </form>
+                </div>
+            @endauth
+
+            @guest
+                <div class="ml-4 flex items-center">
+                    <a href="{{ route('login') }}"
+                        class="text-white hover:text-white">
+                        <i class='bx bxs-log-in text-3xl'></i>
+                    </a>
+                </div>
+            @endguest
 
 
 

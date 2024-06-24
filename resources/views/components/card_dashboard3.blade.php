@@ -150,210 +150,67 @@ $(document).ready(function(){
 	<div class="flex flex-col lg:flex-row">
 		<div class="col-md-12">
 			<h2 class="text-blue-900 text-2xl font-bold">Rekomendasi Komik</h2>
-			<div class="text-gray-600 text-m text-center py-5">Temukan dunia yang memikat dari manga-manga terbaik! Jelajahi cerita-cerita yang mendebarkan, karakter-karakter yang memikat, dan seni yang memukau. Hadirkan kegembiraan dan keajaiban manga ke dalam hidup Anda sekarang!</div>
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-			<div class="carousel-inner">
-				<div class="item carousel-item active">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2024/2/16/ademqudiwx943kpy3dwshj.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Yoshiyuki Sadamoto/khara/ Gainax</div>		
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Neon Genesis Evangelion - Edition 03</a>	
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>													
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.88.000</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-						<div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2023/8/8/tn6qzl9lfajjgnmw7xsmgd.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Tatsuki Fujimoto</div>
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Akasha : Chainsaw Man Edition 04</a>
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>													
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.38.400</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-						<div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2023/2/1/purqfmcqbjfeeo4i76ut8t.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Ohba Tsugumi</div>
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Death Note - New Edition 01</a>			
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>													
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.70.400</b></p>			
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-						<div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2023/7/6/pefgbhreclxpcjwugfmsd9.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Naoki Urasawa</div>	
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Akasha : Collector's Monster 01</a>	
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>			
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.126.000</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item carousel-item">
-					<div class="row">
-                    <div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2023/9/4/eqabs5dgzrpwkp7trvqajz.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Gege Akutami</div>	
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Jujutsu Kaisen 11</a>		
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>			
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.32.000</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-						<div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/items/img20220928_15154296.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Valerie</div>	
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Fur Immer Dein Ian</a>		
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>			
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.89.900</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-						<div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2024/3/10/ni6pygamnst2zjynfkkbpz.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Eiichiro Oda</div>	
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">One Piece 13 (2024)</a>		
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>			
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.36.000</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>
-						<div class="col-sm-3">
-                        <div class="thumb-wrapper">
-								<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
-								<div class="img-box">
-									<img src="https://cdn.gramedia.com/uploads/picture_meta/2023/12/21/kmjjfqheqbttypvymspt7c.jpg" class="img-fluid" alt="">									
-								</div>
-								<div class="thumb-content text-left">
-                                    <div class="text-gray text-xs font-semibold py-2">Endo Tatsuya</div>	
-                                    <a href="#" class="text-blue-900 text-m font-bold py-2">Spy x Family 11</a>		
-                                    <div class="star-rating">
-										<ul class="list-inline">
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star"></i></li>
-											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-										</ul>
-									</div>			
-									<p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.36.000</b></p>
-                                    <a href="#" class="btn btn-primary">Tambah Keranjang</a>
-								</div>						
-							</div>
-						</div>	
-					</div>
-				</div>
+			<div class="text-gray-600 text-m text-center py-5">Temukan dunia yang memikat dari manga-manga terbaik! Jelajahi cerita-cerita yang mendebarkan, karakter-karakter yang memikat, dan seni yang memukau. Hadirkan kegembiraan dan keajaiban manga ke dalam hidup Anda sekarang!
 			</div>
-			<!-- Carousel controls -->
-			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-				<i class="fa fa-angle-left"></i>
-			</a>
-			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
-				<i class="fa fa-angle-right"></i>
-			</a>
-		</div>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+				<div class="carousel-inner">
+					@forelse($produk->where('kode_kategori', 3)->chunk(4) as $chunk)
+						<div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+							<div class="row">
+								@foreach($chunk as $item)
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+											<div class="img-box">
+												<img src="{{ asset('img/produk/' . $item->gambar) }}" class="img-fluid" alt="{{ $item->judul_buku }}">
+											</div>
+											<div class="thumb-content text-left">
+												<div class="text-gray text-xs font-semibold py-2">{{ $item->penulis }}</div>
+												<a href="{{ route('produk.show', $item->kode_buku) }}" class="text-blue-900 text-m font-bold py-2">{{ $item->judul_buku }}</a>
+												<div class="star-rating">
+													<ul class="list-inline">
+														{{-- static 5 star --}}
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+													</ul>
+												</div>
+												<p class="item-price text-black text-2x1 font-semibold py-2">
+													<b>Rp.{{ number_format($item->harga, 0, ',', '.') }}</b>
+												</p>
+												<div class="text-center">
+													<form action="{{ route('keranjang.store') }}" method="post">
+														@csrf
+														<input type="hidden" name="kode_buku" value="{{ $item->kode_buku }}">
+														<button type="submit" class="btn btn-primary">Tambah Keranjang</button>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								@endforeach
+							</div>
+						</div>
+					@empty
+						<div class="item carousel-item active">
+							<div class="row">
+								<div class="col-12">
+									<p>Tidak ada produk</p>
+								</div>
+							</div>
+						</div>
+					@endforelse
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

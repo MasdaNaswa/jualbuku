@@ -123,10 +123,21 @@
                                 class="px-4 py-3 font-medium text-gray-900  dark:text-black bg-blue-900 hover:bg-blue-800">
                                 <tr>
                                     <th class="py-2 px-4 border-b text-sm">Nama Pengguna</th>
+                                    <th class="py-2 px-4 border-b text-sm">No Telp</th>
                                     <th class="py-2 px-4 border-b text-sm">Tanggal Pesanan</th>
-                                    <th class="py-2 px-4 border-b text-sm">Total Harga</th>
                                     <th class="py-2 px-4 border-b text-sm">Kode Pesanan</th>
+                                    <th class="py-2 px-4 border-b text-sm">Judul Buku</th>
+                                    <th class="py-2 px-4 border-b text-sm">Penulis</th>
+                                    <th class="py-2 px-4 border-b text-sm">Jumlah</th>
+                                    <th class="py-2 px-4 border-b text-sm">Harga</th>
+                                    <th class="py-2 px-4 border-b text-sm">Alamat</th>
+                                    <th class="py-2 px-4 border-b text-sm">Provinsi</th>
+                                    <th class="py-2 px-4 border-b text-sm">Kota</th>
+                                    <th class="py-2 px-4 border-b text-sm">Kecamatan</th>
+                                    <th class="py-2 px-4 border-b text-sm">Kode Pos</th>
                                     <th class="py-2 px-4 border-b text-sm">Bukti Pembayaran</th>
+                                    <th class="py-2 px-4 border-b text-sm">Metode Pembayaran</th>
+                                    <th class="py-2 px-4 border-b text-sm">Metode Pengiriman</th>
                                     <th class="py-2 px-4 border-b text-sm">Aksi</th>
                                 </tr>
                                 </theadclass>
@@ -135,10 +146,21 @@
                     <tbody>
                         <tr>
                             <td class="py-2 px-4 border-b text-black text-sm">Masda</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">20-04-2023</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">Rp 100.000</td>
-                            <td class="py-2 px-4 border-b text-black text-sm">GFAH11 </td>
+                            <td class="py-2 px-4 border-b text-black text-sm">081722797834</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">20/04/2023</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">FSADJWPDJO</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">Laut Bercerita</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">Leila Chudor</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">1</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">Rp.100.000</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">PERUMAHAN HUTATAP BLOK F NO. 24 RT 2 RW 1 Batu Aji</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">Kepulauan Riau</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">Batam</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">Sagulung</td>
+                            <td class="py-2 px-4 border-b text-black text-sm">29439</td>
                             <td class="py-2 px-4 border-b max-w-xs whitespace-normal text-black text-sm">.jpg</td>
+                            <td class="py-2 px-4 border-b max-w-xs whitespace-normal text-black text-sm">Dana</td>
+                            <td class="py-2 px-4 border-b max-w-xs whitespace-normal text-black text-sm">JNE</td>
                             <td class="py-2 px-4 border-b">
                                 <div class="flex space-x-2">
                                     <div class="flex space-x-2">

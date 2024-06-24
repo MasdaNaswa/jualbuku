@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Form Pembayaran</title>
-        <link href="styles/output.css" rel="stylesheet" />
+        <link href="style/output.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     </head>
     <body>
@@ -224,7 +224,7 @@
                 </div>
             </div>
         </div>
-        <footer class="relative bg-[] pt-8 pb-6 py-20">
+        <footer class="relative bg-white pt-8 pb-6 py-20">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap text-left lg:text-left">
                     <div class="w-full lg:w-6/12 px-4">

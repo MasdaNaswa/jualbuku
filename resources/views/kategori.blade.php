@@ -4,139 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategori</title>
+    <title>Navbar</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Tambahan CSS jika diperlukan */
-        .product-card:hover {
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-        }
-
-    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body class="bg-gray">
-    <navbar>
-        <div>
-            @include('components.header')
-        </div>
-    </navbar>
+<body class="bg-white">
 
-    <div class="container mx-auto py-20">
-        <h1 class="text-4xl font-bold text-center mb-8"></h1>
-        <div class="flex">
-            <!-- Sidebar Kategori -->
-            <div class="w-1/5 bg-white p-6 rounded-lg shadow-lg mr-8">
-                <h2 class="text-2xl font-semibold mb-4">Kategori</h2>
-                <ul>
-                    <li class="mb-4"><a href="#" class="text-black hover:text-blue-700 font-semibold">Buku Cerpen</a>
-                    </li>
-                    <li class="mb-4"><a href="#" class="text-black hover:text-blue-700 font-semibold">Buku Novel</a>
-                    </li>
-                    <li class="mb-4"><a href="#" class="text-black hover:text-blue-700 font-semibold">Buku Komik</a>
-                    </li>
-                    <li class="mb-4"><a href="#" class="text-black hover:text-blue-700 font-semibold">Buku Fiksi</a>
-                    </li>
-                    <li class="mb-4"><a href="#" class="text-black hover:text-blue-700 font-semibold">Buku Nonfiksi</a>
-                    </li>
-                    <li class="mb-4"><a href="#" class="text-black hover:text-blue-700 font-semibold">Buku Sains</a>
-                    </li>
-                </ul>
+    <!-- Navbar -->
+    <nav class="bg-blue-900 py-4">
+        <div class="container mx-auto flex justify-between items-center px-20">
+
+            <!-- Logo -->
+            <div>
+                <a href="dashboard" class="text-white text-2xl font-bold">Landing Library</a>
             </div>
 
-            <!-- Daftar Produk -->
-            <div class="w-4/5 p-5">
-                <div class="flex flex-col items-center">
-                    <div class="flex justify-between w-full mb-5">
-                        <div class="w-1/4 bg-white p-5 mb-5 mr-5 border shadow text-left rounded-lg">
-                            <!-- Menambahkan margin-right di sini -->
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/ebook-previews/40678/143505/1.jpg"
-                                alt="Product 1" class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="detail-produk" class="text-blue-900 text-m font-bold py-2">Laut Bercerita</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                        <div class="w-1/4 bg-white p-5 mb-5 mr-5 border shadow text-left rounded-lg">
-                            <!-- Menambahkan margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/img20220905_11324048.jpg" alt="Product 2"
-                                class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                        <div class="w-1/4 bg-white p-5 mb-5 mr-5 border shadow text-left rounded-lg">
-                            <!-- Menambahkan margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/56531/thumb_image_normal/BLK_TK2020193493.jpg"
-                                alt="Product 3" class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                        <div class="w-1/4 bg-white p-5 mb-5 border shadow text-left rounded-lg">
-                            <!-- Tidak ada margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/img20220928_15154296.jpg" alt="Product 3"
-                                class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                    </div>
-                    <div class="flex justify-between w-full mb-5">
-                        <div class="w-1/4 bg-white p-5 mb-5 mr-5 border shadow text-left rounded-lg">
-                            <!-- Menambahkan margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/9786025734441_si-anak-spesi.jpg"
-                                alt="Product 1" class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                        <div class="w-1/4 bg-white p-5 mb-5 mr-5 border shadow text-left rounded-lg">
-                            <!-- Menambahkan margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/9786020651927_Funiculi_Funicula_cov.jpg"
-                                alt="Product 2" class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                        <div class="w-1/4 bg-white p-5 mb-5 mr-5 border shadow text-left rounded-lg">
-                            <!-- Menambahkan margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/9789792248616_negeri-5-menara-_cu-cover-baru_.jpg"
-                                alt="Product 3" class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
-                        </div>
-                        <div class="w-1/4 bg-white p-5 mb-5 border shadow text-left rounded-lg">
-                            <!-- Tidak ada margin-right di sini -->
-                            <img src="https://cdn.gramedia.com/uploads/items/9786020366517_Cantik-Itu-Luka-Hard-Cover---Limited-Edition.jpg"
-                                alt="Product 3" class="w-full h-auto mb-4 rounded-lg">
-                            <div class="text-gray text-xs font-semibold py-2">Tere Liye</div>
-                            <a href="#" class="text-blue-900 text-m font-bold py-2">Bulan</a>
-                            <p class="item-price text-black text-2x1 font-semibold py-2"><b>Rp.85.500</b></p>
-                            <button
-                                class="text-xs bg-white text-blue-400 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:bg-blue-400 hover:text-white hover:border-5 hover:border-blue-500">
-                                Tambah Keranjang</button>
+            <!-- Categories -->
+            <div class="hidden md:flex space-x-4">
+                <div class="relative ml-6" x-data="{ open: false }">
+                    <button
+                        @click="open = !open"
+                        class="text-white text-xm font-bold hover:bg-blue-900 px-3 py-2 rounded-md inline-flex items-center">
+                        <span>Kategori Buku</span>
+                        <svg class="h-3 w-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute z-10 mt-2 bg-white rounded-md shadow-lg py-1 px-6 w-96">
+                        <div class="flex flex-col">
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Sains</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Bisnis</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
                         </div>
                     </div>
                 </div>
@@ -155,5 +61,4 @@
     </div>
 
 </body>
-
 </html>

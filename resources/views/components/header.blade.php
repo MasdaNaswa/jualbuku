@@ -22,8 +22,9 @@
 
             <!-- Categories -->
             <div class="hidden md:flex space-x-4">
-                <div class="relative group ml-6">
+                <div class="relative ml-6" x-data="{ open: false }">
                     <button
+                        @click="open = !open"
                         class="text-white text-xm font-bold hover:bg-blue-900 px-3 py-2 rounded-md inline-flex items-center">
                         <span>Kategori Buku</span>
                         <svg class="h-3 w-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -33,7 +34,9 @@
                         </svg>
                     </button>
                     <div
-                        class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
+                        x-show="open"
+                        @click.away="open = false"
+                        class="absolute z-10 mt-2 bg-white rounded-md shadow-lg py-1 px-6 w-96">
                         <div class="flex flex-col">
                             @php
                                 $kategori = \App\Models\Kategori::all();
@@ -45,10 +48,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <!-- Search Bar -->
             <div class="flex-grow mx-4">
                 <!-- Adjusted margin -->
@@ -101,23 +100,8 @@
 
         </div>
     </nav>
-
     <!-- Include the Alpine.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
-
-    <!-- JavaScript to toggle dropdown -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownButtons = document.querySelectorAll('.relative');
-            dropdownButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    button.querySelector('.absolute').classList.toggle('hidden');
-                });
-            });
-        });
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
 
 </body>
-
 </html>

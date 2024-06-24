@@ -29,7 +29,7 @@
                 <div class="relative group ml-6">
                     <button
                         class="text-white text-xm font-bold hover:bg-blue-900 px-3 py-2 rounded-md inline-flex items-center">
-                        <span>Kategori </span>
+                        <span>Kategori Buku</span>
                         <svg class="h-3 w-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7">
@@ -38,15 +38,12 @@
                     </button>
                     <div
                         class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
-                        <div
-                            class="absolute z-10 hidden group-hover:flex flex-col bg-white rounded-md shadow-lg py-1 px-6 w-96">
-                            <div class="flex flex-col">
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Cerpen</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
-                                <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
-                            </div>
+                        <div class="flex flex-col">
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Cerpen</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Novel</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Komik</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Fiksi</a>
+                            <a href="#" class="block px-2 py-2 text-sm text-blue-900 font-bold">Buku Nonfiksi</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +74,7 @@
             </div>
 
             <div class="ml-4 flex items-center">
-                <a href="#" class="text-white hover:white">
+                <a href="akun" class="text-white hover:white">
                     <i class='bx bxs-user-circle text-3xl'></i>
                 </a>
             </div>
@@ -174,7 +171,7 @@
                 <div>
                     <p class="text-xl font-semibold text-black">Total: <span id="totalPrice">Rp 220.000</span></p>
                     <a href="form-pembayaran"
-                        class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 inline-block">Lanjutkan
+                        class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-block">Lanjutkan
                         Pembayaran</a>
                 </div>
             </div>

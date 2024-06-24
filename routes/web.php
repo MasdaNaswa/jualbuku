@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginPembeliController;
-use App\Http\Controllers\RegisterPembeliController;
-use App\Http\Controllers\LupaKataSandiPembeliController;
 use App\Http\Controllers\DashboardPembeliController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\ListProdukController;
@@ -12,13 +10,12 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\LoginAdminController;
-use App\Http\Controllers\RegisterAdminController;
-use App\Http\Controllers\LupaKataSandiAdminController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardAdminProdukController;
 use App\Http\Controllers\DashboardAdminPesananController;
 use App\Http\Controllers\DashboardAdminRekapanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DetailProdukController;
 use App\Http\Controllers\FormPembayaranController;
 use App\Http\Controllers\RingkasanController;
@@ -61,6 +58,7 @@ Route::get('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'showLupa
 Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm']);
 Route::post('/register', [RegisterController::class, 'register']);
+
 Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm']);
 Route::post('/login-admin', [LoginAdminController::class, 'processLogin']);
 Route::get('/register-admin', [RegisterAdminController::class, 'showRegisterForm']);
@@ -72,12 +70,16 @@ Route::get('/dashboard-admin', [DashboardAdminController::class, 'index']);
 // Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index']);
 Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
 Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
+
 Route::get('/detail-produk', [DetailProdukController::class, 'index']);
 Route::get('/rekomendasi', [ProdukController::class, 'rekomendasi'])->name('rekomendasi');
 // Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
 Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
+
+
 Route::get('/cetak-resi', [ResiController::class, 'showForm']);
 Route::get('/generate-pdf', [ResiController::class, 'generatePDF']);
+
 Route::get('/kategori/{kategori}', [KategoriController::class, 'index'])->name('kategori.index');
 Route::get('/ringkasan', [RingkasanController::class, 'index'])->name('ringkasan');
 // Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);

@@ -13,7 +13,7 @@
                         <h3 class="font-bold text-2xl text-blue-400">Ubah Kata Sandi </h3>
                     </div>
                     <div class="space-y-6">
-                        <form action="{{route('lupa_proses_admin')}}" method="POST">
+                        <form action="{{route('lupa_proses')}}" method="POST">
                             @csrf
                             <div>
                                 <input type="text" name="email" id="email"

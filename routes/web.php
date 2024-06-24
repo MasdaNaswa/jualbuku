@@ -23,7 +23,6 @@ use App\Http\Controllers\ResiController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\RekapanController;
 use Illuminate\Support\Facades\Auth;
 

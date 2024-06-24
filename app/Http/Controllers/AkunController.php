@@ -18,7 +18,7 @@ class AkunController extends Controller
         $keranjang = $user->keranjang; // Fetch related carts
         $pesanan = $user->pesanan; // Fetch related orders
 
-        return view('akun', compact('user', 'keranjang', 'pesanan'));
+        return view('akun.index', compact('user', 'keranjang', 'pesanan'));
     }
 
     /**

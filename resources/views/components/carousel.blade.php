@@ -27,19 +27,19 @@
                     <!-- Slide-start -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="/images/1.png">
+                            <img src="/img/1.png">
                         </div>
                     </div>
                     <!-- Slide-end -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="/images/2.png">
+                            <img src="/img/2.png">
                         </div>
                     </div>
                     <!-- More slides... -->
                     <div class="swiper-slide tranding-slide">
                         <div class="tranding-slide-img">
-                            <img src="/images/3.png">
+                            <img src="/img/3.png">
                         </div>
                     </div>
                 </div>

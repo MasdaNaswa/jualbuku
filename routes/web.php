@@ -71,7 +71,7 @@ Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 
 Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
 
 Route::get('/detail-produk', [DetailProdukController::class, 'index']);
-Route::get('/rekomendasi', [ProdukController::class, 'rekomendasi'])->name('rekomendasi');
+Route::get('/detail-produk', [DetailProdukController::class, 'produk'])->name('produk.show');
 // Route::get('/form-pembayaran', [FormPembayaranController::class, 'showForm']);
 Route::post('/process-payment', [FormPembayaranController::class, 'processPayment']);
 

@@ -204,16 +204,7 @@
 													<div class="thumb-content text-left">
 														<div class="text-gray text-xs font-semibold py-2">{{ $item->penulis }}</div>
 														<a href="{{ route('produk.show', $item->kode_buku) }}" class="text-blue-900 text-m font-bold py-2">{{ $item->judul_buku }}</a>
-														<div class="star-rating">
-															<ul class="list-inline">
-																{{-- static 5 star --}}
-																<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																<li class="list-inline-item"><i class="fa fa-star"></i></li>
-																<li class="list-inline-item"><i class="fa fa-star"></i></li>
-															</ul>
-														</div>
+		
 														<p class="item-price text-black text-2x1 font-semibold py-2">
 															<b>Rp.{{ number_format($item->harga, 0, ',', '.') }}</b>
 														</p>

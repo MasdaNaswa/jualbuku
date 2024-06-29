@@ -44,7 +44,7 @@
                             <div
                                 class="flex flex-col items-start px-7 py-8 mt-4 text-lg text-black bg-white rounded-xl shadow-md max-md:px-5 max-md:max-w-full">
                                 <div class="flex gap-3 text-xl">
-                                    <img loading="lazy" src="{{ asset('images/mdi_address-marker.svg') }}"
+                                    <img loading="lazy" src="{{ asset('img/mdi_address-marker.svg') }}"
                                         alt="Alamat tujuan pengiriman icon" class="shrink-0 aspect-square w-[30px]" />
                                     <h3 class="flex-auto my-auto">
                                         Alamat tujuan pengiriman
@@ -99,7 +99,7 @@
                             <div
                                 class="flex flex-col items-start px-7 pt-5 pb-8 mt-11 text-lg text-black bg-white rounded-xl shadow-md max-md:px-5 max-md:mt-10 max-md:max-w-full">
                                 <div class="flex gap-3 text-xl">
-                                    <img loading="lazy" src="{{ asset('images/mdi_address-marker.svg') }}"
+                                    <img loading="lazy" src="{{ asset('img/mdi_address-marker.svg') }}"
                                         class="shrink-0 aspect-square w-[30px]" />
                                     <h3 class="flex-auto">Nomor telephone pengguna</h3>
                                 </div>
@@ -115,7 +115,7 @@
                                     @enderror
                                 </div>
                                 <div class="flex flex-col pl-0 md:pl-10 w-full">
-                                    <label for="no_telp" class="mt-7 max-md:ml-2.5">
+                                    <label for="nama" class="mt-7 max-md:ml-2.5">
                                         Nama
                                     </label>
                                     <input type="text" id="nama" name="nama"
@@ -126,7 +126,7 @@
                                     @enderror
                                 </div>
                                 <div class="flex flex-col pl-0 md:pl-10 w-full">
-                                    <label for="no_telp" class="mt-7 max-md:ml-2.5">
+                                    <label for="email" class="mt-7 max-md:ml-2.5">
                                         Email
                                     </label>
                                     <input type="text" id="email" name="email"
@@ -223,7 +223,7 @@
                                 @enderror
                             </div>
                             <div
-                                class="flex flex-col px-4 pt-6 pb-2.5 mt-44 w-full bg-white rounded-xl shadow-md max-md:mt-10">
+                                class="flex flex-col px-4 pt-6 pb-2.5 mt-10 w-full bg-white rounded-xl shadow-md max-md:mt-10">
                                 <div class="flex flex-col text-lg text-neutral-500 gap-8">
                                     <h3 class="text-xl text-black">Rincian Belanja</h3>
                                     <div class="text-sm">

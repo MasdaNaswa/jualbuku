@@ -22,7 +22,7 @@
                 <div class="flex flex-col md:flex-row -mx-4">
                     <div class="md:flex-1 px-2">
                         <div class="h-[460px] rounded-lg bg-white dark:bg-gray-700 mb-4">
-                            <img class="w-full h-full object-cover" src="{{ asset('img/produk/' . $produk->gambar) }}"
+                            <img class="w-full h-full object-cover rounded-lg" src="{{ asset('img/produk/' . $produk->gambar) }}"
                                 alt="Product Image">
                         </div>
                     </div>
@@ -61,21 +61,6 @@
                         <div class="md:flex-1">
                             <div class="p-10 bg-white rounded shadow-md">
                                 <div class="flex flex-col items-start mb-4">
-                                    <div class="flex flex-col items-start mb-4">
-                                        <span class="text-lg font-bold mb-2">Review buku</span>
-                                        <div id="star-container" class="flex space-x-1">
-                                            <span data-value="1"
-                                                class="star text-gray-400 cursor-pointer text-3xl">&#9733;</span>
-                                            <span data-value="2"
-                                                class="star text-gray-400 cursor-pointer text-3xl">&#9733;</span>
-                                            <span data-value="3"
-                                                class="star text-gray-400 cursor-pointer text-3xl">&#9733;</span>
-                                            <span data-value="4"
-                                                class="star text-gray-400 cursor-pointer text-3xl">&#9733;</span>
-                                            <span data-value="5"
-                                                class="star text-gray-400 cursor-pointer text-3xl">&#9733;</span>
-                                        </div>
-                                    </div>
                                     <div class="flex flex-col items-start mb-4">
                                         <span class="text-lg font-bold mb-2">Harga buku</span>
                                         <p class="text-gray-700">Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>

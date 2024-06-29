@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('kecamatan');
             $table->string('kode_pos');
             $table->string('no_telp');
+            $table->string('nama'); // Tambahkan kolom 'nama'
+            $table->string('email');
             $table->string('bukti_pembayaran')->nullable();
             $table->enum('metode_pembayaran', ['DANA', 'COD']);
             $table->enum('metode_pengiriman', ['JNE', 'JNT', 'POS']);

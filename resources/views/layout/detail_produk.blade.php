@@ -18,7 +18,7 @@
     </div>
 
     <div>
-        @include('components.recommended23')
+        @include('components.rekomendasi')
     </div>
     
     <div class="py-20 px-5">

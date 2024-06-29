@@ -14,9 +14,10 @@ class DetailProdukController extends Controller
 }
 
 public function produk()
-    {
-        $produk = Produk::all();
-        return view('dashboard.index', compact('produk'));
-    }
+{
+    $produk = Produk::all(); // Adjust this query as needed
+    return view('produk.show', compact('produk'));
+}
+
 
 }

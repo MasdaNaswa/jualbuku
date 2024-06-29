@@ -33,7 +33,7 @@
         @endif
         <div class="flex flex-col pt-4 pb-11 mt-12 bg-white rounded-xl shadow-md max-md:mt-10 max-md:max-w-full">
             <div class="flex justify-start mx-4 items-center text-3xl text-cyan-700">
-                <img src="{{ asset('images/ringkas.png') }}" alt="Order summary icon" class="shrink-0 w-[50px]" />
+                <img src="{{ asset('img/ringkas.png') }}" alt="Order summary icon" class="shrink-0 w-[50px]" />
                 <h1 class="">Ringkasan Pesanan</h1>
             </div>
             <div class="flex gap-10 mx-4 max-md:flex-col max-md:gap-0">
@@ -159,7 +159,7 @@
                     class="flex max-md:justify-center max-md:w-full justify-start gap-10 text-black max-md:flex-wrap max-md:max-w-full">
                     <div class="flex flex-col gap-y-4 items-center max-md:max-w-full max-w-[30%]">
                         <h2 class="text-3xl">Lakukan Pembayaran</h2>
-                        <img src="{{ asset('images/barcode.png') }}" alt="QR code for payment" class="max-w-full" />
+                        <img src="{{ asset('img/barcode.png') }}" alt="QR code for payment" class="max-w-full" />
                         <div class="max-w-full gap-y-3">
                             <p class="mx-4 text-xl text-justify max-md:mx-2.5">
                                 Scan kode QR diatas untuk melakukan pembayaran
@@ -231,7 +231,7 @@
         class="fixed inset-0 z-50 @if($pesanan->status != 'diterima') hidden @endif flex items-center justify-center overflow-auto backdrop-blur-sm bg-black bg-opacity-50">
         <div class="flex flex-col items-center px-8 py-4 max-w-full shadow-xl bg-white rounded-xl w-[544px] max-h-[752px]">
             <h1 class="z-10 text-3xl text-black">Transaksi Berhasil</h1>
-            <img src="{{ asset('images/checklist.png') }}" alt="Transaction success illustration"
+            <img src="{{ asset('img/checklist.png') }}" alt="Transaction success illustration"
                 class="max-w-full aspect-square w-[200px] mt-4" />
             <p class="text-3xl text-cyan-700">Rp {{ number_format($totalHarga, 0, ',', '.') }} </p>
             <a href="{{ route('ringkasan.exportResiPDF', $pesanan->kode_pesanan) }}" class="my-4 text-base text-cyan-700 underline">cetak resi</a>

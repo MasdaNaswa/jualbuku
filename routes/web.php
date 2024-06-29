@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginPembeliController;
 use App\Http\Controllers\DashboardPembeliController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\ListProdukController;
@@ -9,11 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\DashboardAdminController;
-use App\Http\Controllers\DashboardAdminProdukController;
-use App\Http\Controllers\DashboardAdminPesananController;
-use App\Http\Controllers\DashboardAdminRekapanController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\DetailProdukController;
@@ -22,7 +17,6 @@ use App\Http\Controllers\RingkasanController;
 use App\Http\Controllers\ResiController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PesananController;
-use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RekapanController;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,10 +30,6 @@ Route::get('api/pesanan', [ApiController::class, 'getPesanan']);
 Route::get('api/pesanan-item', [ApiController::class, 'getPesananItems']);
 Route::get('api/user', [ApiController::class, 'getUsers']);
 
-
-
-
-
 Route::get('/', function () {
     if (Auth::check() && Auth::user()->role == 'pembeli') {
         return redirect()->route('dashboard');
@@ -50,25 +40,10 @@ Route::get('/', function () {
     }
 });
 
-Route::get('/login-pembeli', [LoginPembeliController::class, 'showLoginForm']);
-Route::get('/register-pembeli', [RegisterPembeliController::class, 'showForm']);
-Route::get('/lupa-kata-sandi', [LupaKataSandiPembeliController::class, 'showLupaKataSandiForm']);
 // Route::get('/dashboard', [DashboardPembeliController::class, 'index']);
 Route::get('/keranjang', [KeranjangController::class, 'tampilkan']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm']);
 Route::post('/register', [RegisterController::class, 'register']);
-
-Route::get('/login-admin', [LoginAdminController::class, 'showLoginForm']);
-Route::post('/login-admin', [LoginAdminController::class, 'processLogin']);
-Route::get('/register-admin', [RegisterAdminController::class, 'showRegisterForm']);
-Route::post('/register-admin', [RegisterAdminController::class, 'processRegister']);
-Route::get('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'showLupaKataSandiForm']);
-Route::post('/lupa-kata-sandi', [LupaKataSandiAdminController::class, 'processLupaKataSandi']);
-Route::get('/dashboard-admin', [DashboardAdminController::class, 'index']);
-
-// Route::get('/dashboard-admin-produk', [DashboardAdminProdukController::class, 'index']);
-Route::get('/dashboard-admin-pesanan', [DashboardAdminPesananController::class, 'index']);
-Route::get('/dashboard-admin-rekapan', [DashboardAdminRekapanController::class, 'index']);
 
 Route::get('/detail-produk', [DetailProdukController::class, 'index']);
 Route::get('/detail-produk', [DetailProdukController::class, 'produk'])->name('produk.show');
@@ -98,7 +73,8 @@ Route::post('/reset-password/{token}', [ForgotPasswordController::class, 'update
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', [DashboardPembeliController::class, 'index'])->name('dashboard');
 
-    Route::group(['middleware' => 'auth'], function () {
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/akun', [AkunController::class, 'tampilkan'])->name('akun.index');
         Route::get('/produk/{produk}', [ProdukController::class, 'show'])->name('produk.show');
         Route::get('/akun', [AkunController::class, 'index'])->name('akun.index');
 Route::get('/akun/ringkasan/{kodePesanan}', [AkunController::class, 'showRingkasan'])->name('akun.showRingkasan');

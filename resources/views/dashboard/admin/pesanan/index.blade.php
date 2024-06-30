@@ -227,13 +227,8 @@
                                             </div>
                                             <div class="p-6 text-center">
                                                 <div class="flex justify-center mb-4">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                                        width="60" height="60" fill="gray"
-                                                        stroke="CurrentColor">
-                                                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                        <path
-                                                            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
-                                                    </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="65" height="65" fill="gray"
+                                                stroke="CurrentColor"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z"></path></svg>
                                                 </div>
                                                 <h3 class="mb-5 text-lg font-bold text-black dark:text-gray-400">
                                                     Terima Pesanan?

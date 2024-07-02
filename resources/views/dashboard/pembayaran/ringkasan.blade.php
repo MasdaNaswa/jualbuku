@@ -159,7 +159,7 @@
                     class="flex max-md:justify-center max-md:w-full justify-start gap-10 text-black max-md:flex-wrap max-md:max-w-full">
                     <div class="flex flex-col gap-y-4 items-center max-md:max-w-full max-w-[30%]">
                         <h2 class="text-3xl">Lakukan Pembayaran</h2>
-                        <img src="{{ asset('img/barcode.png') }}" alt="QR code for payment" class="max-w-full" />
+                        <img src="{{ asset('img/QR.jpg') }}" alt="QR code for payment" class="max-w-full" />
                         <div class="max-w-full gap-y-3">
                             <p class="mx-4 text-xl text-justify max-md:mx-2.5">
                                 Scan kode QR diatas untuk melakukan pembayaran

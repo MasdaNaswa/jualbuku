@@ -73,7 +73,7 @@
                             @foreach ($produk as $item)
                                 <tr>
                                     <td class="py-2 px-4 border-b"><img src="{{ asset('img/produk/'.$item->gambar) }}" alt="Gambar Buku"
-                                            class="w-16 h-16 object-cover"></td>
+                                            class="w-16 h-22 object-cover"></td>
                                     <td class="py-2 px-4 border-b text-black text-sm">{{ $item->kategori->kategori }}</td>
                                     <td class="py-2 px-4 border-b text-black text-sm">{{ $item->stok }}</td>
                                     <td class="py-2 px-4 border-b text-black text-sm">{{ $item->penulis }}</td>
